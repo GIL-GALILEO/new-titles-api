@@ -1,24 +1,13 @@
-# README
+# GIL New Titles API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+TODO: requirements
 
-Things you may want to cover:
+TODO: development setup instructions
 
-* Ruby version
+## DEVELOPMENT TODO:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- task to pull analytics report from Alma API
+- ingestion of titles from analytics reports
+- determine routes needed to make titles available
+- api authentication for institution users (devise)
+- specs
