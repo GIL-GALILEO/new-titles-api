@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     get 'institutions', to: 'application#institutions'
     get 'new_titles/:days/:media', to: 'titles#index'
     get 'new_titles/:days', to: 'titles#index'
+    get 'new_titles', to: 'titles#index'
   end
 end
