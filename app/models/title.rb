@@ -2,23 +2,21 @@
 
 # represent a title
 class Title < ApplicationRecord
-  def self.create_from_xml(title_xml)
-    data = title_xml.element_children
-    institution = Institution.find_by_institution_code data[6].text
-    institution = Institution.find_by_name data[6].text unless institution
-    return nil unless institution
-    new(
-      institution_id: institution, title: data[4].text, author: data[1].text,
-      # publisher: data[].text,
-      call_number: data[8].text,
-      # library: data[].text,
-      # location: data[].text,
-      material_type: data[12].text,
-      receiving_date: data[2].text,
-      mms_id: data[3].text
-    )
-  rescue StandardError => e
-    puts "Error: #{e}"
-    puts data.to_s
+  EXPIRY_DATE = 90
+
+  def self.sync(titles)
+    outcome = { new_count: 0, expired_titles: expire_titles }
+    titles.each do |title|
+      unless Title.where(mms_id: title.mms_id).exists?
+        saved_title = title.save
+        outcome[:new_count] += 1 if saved_title
+      end
+    end
+  end
+
+  def self.expire_titles
+    old_titles = Title.where('created_at > ?', EXPIRY_DATE.days.ago)
+    old_titles.destroy_all
+    old_titles.length
   end
 end
