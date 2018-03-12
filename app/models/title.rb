@@ -4,6 +4,8 @@
 class Title < ApplicationRecord
   EXPIRY_DATE = 90
 
+  belongs_to :institution
+
   def self.sync(titles)
     outcome = { new_count: 0, expired_titles: expire_titles }
     titles.each do |title|
