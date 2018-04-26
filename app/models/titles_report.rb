@@ -3,22 +3,23 @@
 # represent alma analytics report
 # collates responses across calls and builds titles
 class TitlesReport
-  attr_accessor :titles, :failed_rows
+  attr_accessor :titles, :failed_rows, :medium
 
   def initialize(report)
     @titles = []
     @failed_rows = []
     unfinished = true
     token = nil
+    medium = report =~ /Electronic/ ? 'electronic' : 'physical'
     while unfinished
-      query = { rows: 1000 }
+      query = { limit: 500, col_names: false }
       query[:path] = report unless token
       query[:token] = token if token
       response = AlmaReportsApi.call query
-      raise StandardError('Response not successful') unless response.success?
+      raise(StandardError, "Response not successful: #{response&.message}") unless response&.success?
       xml_doc = parse_xml response
-      extract_titles_from xml_doc
-      token = token_from xml_doc
+      extract_titles_from xml_doc, medium
+      token ||= token_from xml_doc
       unfinished = !finished_from(xml_doc)
     end
   end
@@ -30,7 +31,7 @@ class TitlesReport
   end
 
   def finished_from(xml_doc)
-    xml_doc.xpath('//IsFinished').text.to_s
+    xml_doc.xpath('//IsFinished').text.to_s == 'true'
   end
 
   def parse_xml(response)
@@ -38,13 +39,13 @@ class TitlesReport
     xml_doc.remove_namespaces!
   end
 
-  def extract_titles_from(xml_doc)
+  def extract_titles_from(xml_doc, medium)
     rows = xml_doc.xpath('//Row')
     rows.each do |row|
       begin
-        titles << ReportParser.title_from(row)
-      rescue StandardError
-        failed_rows << row
+        titles << ReportParser.title_from(row, medium)
+      rescue StandardError => e
+        failed_rows << { row: row, message: e.message }
         next
       end
     end

@@ -4,7 +4,7 @@
 class AlmaReportsApi
   include HTTParty
   base_uri 'https://api-eu.hosted.exlibrisgroup.com/almaws/v1/'
-  API_ENDPOINT = '/analytics/reports'.freeze
+  API_ENDPOINT = '/analytics/reports'
 
   def self.call(query)
     response = get(
@@ -15,7 +15,8 @@ class AlmaReportsApi
     tries ||= 3
     response
   rescue ResponseError
-    if (tries -= 1) > 0
+    if (tries - 1).positive?
+      tries -= 1
       retry
     else
       # Slack.error "Report pull failed! ```#{e}```"
