@@ -3,11 +3,12 @@
 # represent alma analytics report
 # collates responses across calls and builds titles
 class TitlesReport
-  attr_accessor :titles, :failed_rows, :medium
+  attr_accessor :titles, :failed_rows, :medium, :calls
 
   def initialize(report)
     @titles = []
     @failed_rows = []
+    @calls = 0
     unfinished = true
     token = nil
     medium = report =~ /Electronic/ ? 'electronic' : 'physical'
@@ -16,7 +17,8 @@ class TitlesReport
       query[:path] = report unless token
       query[:token] = token if token
       response = AlmaReportsApi.call query
-      raise(StandardError, "Response not successful: #{response&.message}") unless response&.success?
+      raise(StandardError, "Response not successful [call ##{calls}]: #{response&.message}") unless response&.success?
+      @calls += 1
       xml_doc = parse_xml response
       extract_titles_from xml_doc, medium
       token ||= token_from xml_doc
