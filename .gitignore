@@ -14,5 +14,7 @@
 !/log/.keep
 !/tmp/.keep
 
+database.yml
 secrets.yml
 .vagrant
+.idea
