@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180426163301) do
+ActiveRecord::Schema.define(version: 20180516215230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20180426163301) do
     t.string "mms_id"
     t.string "subjects"
     t.string "isbn"
-    t.date "publication_date"
+    t.string "publication_date"
     t.string "portfolio_name"
     t.date "portfolio_activation_date"
     t.date "portfolio_creation_date"
