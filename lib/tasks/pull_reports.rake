@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-task get_daily_report: :environment do
+task get_electronic_daily_report: :environment do
   report = TitlesReport.new '/shared/Galileo Network/Reports/New Titles Electronic Daily'
   titles = report.titles
   outcome = Title.sync titles
