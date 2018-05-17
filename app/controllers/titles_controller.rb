@@ -14,9 +14,11 @@ class TitlesController < ApplicationController
       #format.html {render :index}
       #format.json { render :json => @titles}
     #end
-    render json: @titles.to_json(except: :id)
+    render json: @titles.to_json(
+      except: %i[id created_at updated_at institution_id],
+      methods: :inst_name
+    )
   end
-
 
   private
 
@@ -29,4 +31,5 @@ class TitlesController < ApplicationController
     days = params[:days] || 30
     Date.today - days.to_i
   end
+
 end
