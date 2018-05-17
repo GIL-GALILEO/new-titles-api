@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  #get 'data_tables/data_table_view'
+  get 'sample_view', to: 'data_tables#table_view'
 
   constraints format: :json do
     get 'test', to: 'application#test'
@@ -10,7 +10,5 @@ Rails.application.routes.draw do
     get 'new_titles/:days', to: 'titles#index'
     get 'new_titles', to: 'titles#index'
   end
-  resource :data_tables do
-    get "table_view"
-  end
+
 end
