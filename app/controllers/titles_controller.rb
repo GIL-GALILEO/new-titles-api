@@ -14,7 +14,7 @@ class TitlesController < ApplicationController
       #format.html {render :index}
       #format.json { render :json => @titles}
     #end
-    render json: @titles
+    render json: @titles.except(:id)
   end
 
 

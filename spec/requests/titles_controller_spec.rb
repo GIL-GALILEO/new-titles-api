@@ -12,6 +12,7 @@ describe 'New Titles API' do
       expect(parsed_response['title']).to eq title.title
       expect(parsed_response['author']).to eq title.author
       expect(parsed_response['mms_id']).to eq title.mms_id
+      expect(parsed_response).not_to have_key :id
     end
   end
   context 'with a date parameter' do
