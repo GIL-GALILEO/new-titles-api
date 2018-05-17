@@ -2,14 +2,21 @@
 
 # Controller for handling API requests and returning title
 class TitlesController < ApplicationController
+
   def index
     date = date_from_days
     @titles = Title.where('receiving_date >= ?', date)
     @titles.where(institution: institution) unless institution.institution_code == '01GALI_NETWORK'
     # @titles.where(material_type: params['type']) if params['type']
     # probably want to limit the number fo returned items? pagination?
+
+    #respond_to do |format|
+      #format.html {render :index}
+      #format.json { render :json => @titles}
+    #end
     render json: @titles
   end
+
 
   private
 

@@ -1,0 +1,54 @@
+<head>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+</head>
+</head>
+
+<h1>New Titles</h1>
+
+<table id="titles">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Publisher</th>
+      <th>Call No.</th>
+      <th>MMSID</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @data_titles.each do |title| %>
+    <tr>
+       <td><%= title.title %></td>
+       <td><%= title.author %></td>
+       <td><%= title.publisher %></td>
+       <td><%= title.call_number %></td>
+       <td><%= title.mms_id %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script>
+    $(function(){
+        $("#titles").dataTable();
+    })
+</script>
