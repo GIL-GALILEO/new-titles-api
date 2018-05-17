@@ -43,7 +43,7 @@ class ReportParser
       when 'Column3'
         hash[:mms_id] = node.text
       when 'Column4'
-        hash[:publication_date] = date_from node.text
+        hash[:publication_date] = node.text
       when 'Column5'
         hash[:publisher] = node.text
       when 'Column6'
@@ -94,9 +94,14 @@ class ReportParser
       when 'Column9'
         hash[:classification_code] = node.text
       when 'Column10'
-        hash[:portfolio_activation_date] = date_from node.text
+        date = date_from node.text
+        hash[:portfolio_activation_date] = date
+        # we should also consider this value the receiving date
+        hash[:receiving_date] = date
       when 'Column11'
         hash[:portfolio_creation_date] = date_from node.text
+      when 'Column12'
+        hash[:availability] = node.text
       when 'Column13'
         hash[:material_type] = node.text
       else
@@ -107,6 +112,6 @@ class ReportParser
   end
 
   def self.date_from(val)
-    val
+    Date.parse val
   end
 end
