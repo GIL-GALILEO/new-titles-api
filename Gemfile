@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
@@ -9,10 +9,8 @@ gem 'httparty'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '~> 0.21.0'
 gem 'puma', '~> 3.7'
+gem 'rails', '~> 5.2'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'rails', '~> 5.1.4'
-gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
-gem 'jquery-ui-rails'
 gem 'will_paginate'
 
 

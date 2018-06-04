@@ -18,28 +18,31 @@
   </style>
   <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
 </head>
-</head>
 
 <h1>New Titles</h1>
 
 <table id="titles">
   <thead>
     <tr>
+      <th>Received</th>
       <th>Title</th>
       <th>Author</th>
       <th>Publisher</th>
       <th>Call No.</th>
       <th>MMSID</th>
+      <th>Institution</th>
     </tr>
   </thead>
   <tbody>
    <% @data_titles.each do |title| %>
     <tr>
+       <td><%= title.receiving_date %></td>
        <td><%= title.title %></td>
        <td><%= title.author %></td>
        <td><%= title.publisher %></td>
        <td><%= title.call_number %></td>
        <td><%= title.mms_id %></td>
+       <td><%= title.institution.name %></td>
     </tr>
   <% end %>
   </tbody>

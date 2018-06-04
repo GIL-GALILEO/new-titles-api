@@ -5,7 +5,10 @@ TODO: development setup instructions
 
 ## DEVELOPMENT TODO:
 
-- review field setting on dates, etc. (MK)
 - api authentication for institution users (MK)
   - devise
-- build frontend using DataTables or something (CF)
+- filter by media type
+  - establish sets of matching values for general media types
+- IZ reports
+  - new flag to indicate whether the record is from the IZ
+  - jobs to import IZ report
