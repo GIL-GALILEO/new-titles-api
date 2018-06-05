@@ -4,16 +4,14 @@
 class TitlesController < ApplicationController
 
   def index
-    date = date_from_days
-    @titles = Title.where('receiving_date >= ?', date).order(receiving_date: :desc)
-    @titles.where(institution: institution) unless institution.institution_code == '01GALI_NETWORK'
-    # @titles.where(material_type: params['type']) if params['type']
-    # probably want to limit the number fo returned items? pagination?
+    @titles = Title.includes(:institution)
+                   .order(:receiving_date)
+                   .page(params[:page])
 
-    #respond_to do |format|
-      #format.html {render :index}
-      #format.json { render :json => @titles}
-    #end
+    # filter by media type
+    media_types = media_types_map[params[:media_type].to_sym]
+    @titles = @titles.where(material_type: media_types) if media_types.any?
+
     render json: @titles.to_json(
       except: %i[id created_at updated_at institution_id],
       methods: :inst_name
@@ -27,9 +25,11 @@ class TitlesController < ApplicationController
     Institution.find 1 # Use USG for now
   end
 
-  def date_from_days
-    days = params[:days] || 30
-    Date.today - days.to_i
+  def media_types_map
+    {
+      dvd: ['Blu-Ray', 'Blu-Ray and DVD', 'DVD', 'DVD-ROM'],
+      music: ['Sound Recording', 'Audio cassette']
+    }
   end
 
 end
