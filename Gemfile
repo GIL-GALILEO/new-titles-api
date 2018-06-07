@@ -12,6 +12,13 @@ gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.2'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'will_paginate'
+gem 'coffee-rails'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-datatables-rails'
+
 
 
 group :development, :test do
