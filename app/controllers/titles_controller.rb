@@ -28,7 +28,13 @@ class TitlesController < ApplicationController
   def media_types_map
     {
       dvd: ['Blu-Ray', 'Blu-Ray and DVD', 'DVD', 'DVD-ROM'],
-      music: ['Sound Recording', 'Audio cassette']
+      music: ['Sound Recording', 'Audio cassette', 'LP', 'Phonograph Record'],
+      book: ['Book'],
+      map: ['Map', 'Atlas'],
+      device: ['Tablet', 'Calculator', 'Camcorder', 'Tablet', 'iPad', 'Laptop'],
+      unknown: ['Unknown'],
+      none: ['None'],
+      thesis: ['Thesis', 'Master Thesis', 'Dissertation', 'PhD Thesis']
     }
   end
 
