@@ -1,5 +1,8 @@
 class DataTablesController < ApplicationController
   def table_view
-    @data_titles = Title.all
+    respond_to do |format|
+      format.html
+      format.json {render json: TitlesDatatable.new(view_context) }
+    end
   end
 end
