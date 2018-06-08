@@ -7,11 +7,11 @@ end
 
 gem 'httparty'
 gem 'jbuilder', '~> 2.5'
+gem 'kaminari'
 gem 'pg', '~> 0.21.0'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.2'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'will_paginate'
 gem 'coffee-rails'
 gem 'sass-rails'
 gem 'uglifier'
