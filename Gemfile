@@ -5,21 +5,19 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'coffee-rails'
 gem 'httparty'
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-datatables-rails'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'pg', '~> 0.21.0'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.2'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'coffee-rails'
 gem 'sass-rails'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uglifier'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem 'jquery-datatables-rails'
-
-
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
