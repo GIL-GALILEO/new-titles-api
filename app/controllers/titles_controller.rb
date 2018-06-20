@@ -7,10 +7,11 @@ class TitlesController < ApplicationController
   def index
     @titles = Title.includes(:institution)
                    .order(:receiving_date)
+                   .where(institution: @institution)
                    .page(params[:page])
     # filter by media type
     if params[:media_type]
-      media_types = media_types_map[params[:media_type].to_sym]
+      media_types = media_types_map[params[:media_type].downcase.to_sym]
       @titles = @titles.where(material_type: media_types) if media_types.any?
     end
     render json: @titles.to_json(
