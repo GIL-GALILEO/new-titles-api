@@ -7,7 +7,7 @@ class Institution < ApplicationRecord
     self.api_key = if Rails.env.production?
                      SecureRandom.hex
                    else
-                     'fake_key'
+                     "#{institution_code}_key"
                    end
   end
 end

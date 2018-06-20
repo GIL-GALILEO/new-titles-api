@@ -18,13 +18,14 @@ describe Institution do
     end
   end
   context 'api auth functionality' do
+    let(:institution) { Institution.new(institution_code: 'GALI') }
     it 'has an api_key' do
-      expect(Institution.new.api_key).to eq 'fake_key'
+      expect(institution.api_key).to eq 'GALI_key'
     end
     context 'in production' do
       it 'has a production API key' do
         allow(Rails).to receive(:env) { 'production'.inquiry }
-        expect(Institution.new.api_key.length).to eq 32
+        expect(institution.api_key.length).to eq 32
       end
     end
   end

@@ -30,6 +30,7 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner'
   gem 'fabrication'
   gem 'faker'
   gem 'rspec-rails'

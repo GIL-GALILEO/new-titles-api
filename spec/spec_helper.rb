@@ -15,9 +15,15 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 
-  # Load application seeds
+  # Load application seeds, initialize database cleaner
   config.before(:suite) do
+    DatabaseCleaner.clean_with :truncation
     Rails.application.load_seed
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.strategy = :truncation, { except: %w[institutions] }
+    DatabaseCleaner.clean
   end
 
   # rspec-expectations config goes here. You can use an alternate

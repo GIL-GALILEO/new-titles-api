@@ -2,18 +2,17 @@
 
 # Controller for handling API requests and returning title
 class TitlesController < ApplicationController
-
+  before_action :authenticate_and_set_inst
+  rescue_from(ActiveRecord::RecordNotFound) { head :not_found }
   def index
     @titles = Title.includes(:institution)
                    .order(:receiving_date)
                    .page(params[:page])
-
     # filter by media type
     if params[:media_type]
       media_types = media_types_map[params[:media_type].to_sym]
       @titles = @titles.where(material_type: media_types) if media_types.any?
     end
-
     render json: @titles.to_json(
       except: %i[id created_at updated_at institution_id],
       methods: :inst_name
@@ -22,11 +21,17 @@ class TitlesController < ApplicationController
 
   private
 
-  def institution
-    # get inst from API key used in request
-    Institution.find 1 # Use USG for now
+  def authenticate_and_set_inst
+    token = request.headers['X-User-Token']
+    @institution = Institution.find_by_api_key token
+    if @institution
+      true
+    else
+      head :unauthorized
+    end
   end
 
+  # move to YAML file and load only when param is found
   def media_types_map
     {
       dvd: ['Blu-Ray', 'Blu-Ray and DVD', 'DVD', 'DVD-ROM'],
