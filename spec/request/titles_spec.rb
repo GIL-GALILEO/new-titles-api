@@ -22,7 +22,7 @@ describe TitlesController, type: :request do
       expect(JSON.parse(response.body)[0]['inst_name']).to eq institution.name
     end
     it 'returns only titles for a specified media type' do
-      Fabricate(:title, material_type: 'DVD')
+      Fabricate(:title, material_type: 'DVD', institution: institution)
       get new_titles_path,
           params: { media_type: 'DVD' },
           headers: headers
