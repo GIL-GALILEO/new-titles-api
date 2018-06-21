@@ -28,3 +28,11 @@ task get_electronic_full_report: :environment do
   outcome = Title.sync titles
   # Slack.info "New Titles List initialized for electronic items. `#{outcome[:new_count]}` titles added."
 end
+
+# UGA Report - Testing new Style
+task get_physical: :environment do
+  report = TitlesReport.new '/shared/University of Georgia/Reports/New Physical Titles UGA'
+  titles = report.titles
+  outcome = Title.sync titles
+  # Slack.info "New Titles List updated. `#{outcome[:new_count]}` titles added and `#{outcome[:expired_count]}` expired."
+end
