@@ -1,38 +1,27 @@
 # frozen_string_literal: true
 
-task get_electronic_daily_report: :environment do
-  report = TitlesReport.new '/shared/Galileo Network/Reports/New Titles Electronic Daily'
-  titles = report.titles
-  outcome = Title.sync titles
-  # Slack.info "New Titles List updated. `#{outcome[:new_count]}` titles added and `#{outcome[:expired_count]}` expired."
-end
+# Pull Report - Testing new Style
+task :get_new_titles, %i[institution type] => :environment do |_, args|
+  slack = Slack::Notifier.new Rails.application.secrets.slack_worker_webhook
 
-# TODO: mapping invalid
-task get_physical_daily_report: :environment do
-  report = TitlesReport.new '/shared/Galileo Network/Reports/New Physical Titles Daily'
-  titles = report.titles
-  outcome = Title.sync titles
-  # Slack.info "New Titles List updated. `#{outcome[:new_count]}` titles added and `#{outcome[:expired_count]}` expired."
-end
+  # ensure valid type
+  raise StandardError unless %w[physical electronic].include? args[:type]
 
-task get_physical_full_report: :environment do
-  report = TitlesReport.new '/shared/Galileo Network/Reports/New Physical Titles'
-  titles = report.titles
-  outcome = Title.sync titles
-  # Slack.info "New Titles List initialized for physical items. `#{outcome[:new_count]}` titles added."
-end
+  # validate and set institutions
+  institution = Institution.find_by_shortcode args[:institution]
+  raise StandardError unless institution
+  slack.ping "Getting new `#{args[:type]}` titles for `#{institution.name}`"
 
-task get_electronic_full_report: :environment do
-  report = TitlesReport.new '/shared/Galileo Network/Reports/New Titles Electronic'
-  titles = report.titles
-  outcome = Title.sync titles
-  # Slack.info "New Titles List initialized for electronic items. `#{outcome[:new_count]}` titles added."
-end
+  # initiate and pull report
+  report = TitlesReport.new institution, args[:type]
 
-# UGA Report - Testing new Style
-task get_physical: :environment do
-  report = TitlesReport.new '/shared/University of Georgia/Reports/New Physical Titles UGA'
+  # get titles from report
   titles = report.titles
-  outcome = Title.sync titles
-  # Slack.info "New Titles List updated. `#{outcome[:new_count]}` titles added and `#{outcome[:expired_count]}` expired."
+  if titles.any?
+    outcome = Title.sync titles
+    slack.ping "New titles for `#{institution.shortcode}` updated. `#{outcome[:new]}` titles added and `#{outcome[:expired]}` expired."
+  else
+    slack.ping "No new titles received for `#{institution.shortcode}`"
+  end
+
 end

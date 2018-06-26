@@ -10,6 +10,9 @@ describe Institution do
     it 'has a institution code' do
       expect(Institution.new).to respond_to :institution_code
     end
+    it 'has a shortcode' do
+      expect(Institution.new).to respond_to :shortcode
+    end
     it 'has a image' do
       expect(Institution.new).to respond_to :image
     end
