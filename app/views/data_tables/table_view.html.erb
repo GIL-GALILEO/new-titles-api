@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 </head>
+<div class="container">
+  <h1>New Titles</h1>
 
-<h1>New Titles</h1>
-
-<table id="titles" class="table table-striped table-bordered" data-source="<%= sample_view_url(format: "json") %>">
-  <thead>
+  <table id="titles" class="table table-bordered table-hover" data-source="<%= sample_view_url(format: "json") %>">
+    <thead class="thead-light">
     <tr>
       <th>Received</th>
       <th>Title</th>
@@ -21,9 +23,11 @@
       <th>MMSID</th>
       <th>Institution</th>
     </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
 
 <script type="text/javascript" charset="utf-8">
   var $table = $('#titles');
