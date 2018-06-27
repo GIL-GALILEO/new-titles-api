@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%= javascript_include_tag "application" %>
   <style>
     table {
       font-family: arial, sans-serif;
@@ -21,7 +22,6 @@
   <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
 </head>
 
-
 <h1>New Titles</h1>
 
 <table id="titles" data-source="<%= sample_view_url(format: "json") %>">
@@ -36,19 +36,6 @@
       <th>Institution</th>
     </tr>
   </thead>
-  <tbody>
-
-  </tbody>
+  <tbody></tbody>
 </table>
-
-
-<%= javascript_include_tag "application" %>
-
-<!--<script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-<script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-<script>
-    $(function(){
-        $("#titles").dataTable();
-    })
-</script>-->
 
