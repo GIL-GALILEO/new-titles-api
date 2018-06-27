@@ -6,6 +6,10 @@ class Title < ApplicationRecord
 
   belongs_to :institution
 
+  def inst_name
+    institution.name
+  end
+
   def self.sync(titles)
     outcome = {
       new: 0, updated: 0, expired: expire_titles(titles.first.institution)
