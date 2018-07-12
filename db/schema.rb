@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_05_211234) do
+ActiveRecord::Schema.define(version: 2018_06_25_152406) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "adminpack"
   enable_extension "plpgsql"
 
   create_table "institutions", force: :cascade do |t|
@@ -21,6 +20,9 @@ ActiveRecord::Schema.define(version: 2018_06_05_211234) do
     t.string "institution_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
+    t.string "api_key"
+    t.string "shortcode", null: false
   end
 
   create_table "titles", force: :cascade do |t|

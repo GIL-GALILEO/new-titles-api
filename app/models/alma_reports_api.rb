@@ -6,11 +6,12 @@ class AlmaReportsApi
   base_uri 'https://api-eu.hosted.exlibrisgroup.com/almaws/v1/'
   API_ENDPOINT = '/analytics/reports'
 
-  def self.call(query)
+  def self.call(query, institution)
+    api_key = Rails.application.secrets.send("#{institution.shortcode}_api_key")
     response = get(
       API_ENDPOINT,
       query: query,
-      headers: { 'Authorization' => "apikey #{Rails.application.secrets.api_key}" }
+      headers: { 'Authorization' => "apikey #{api_key}" }
     )
     tries ||= 3
     response

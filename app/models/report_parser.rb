@@ -2,7 +2,7 @@
 
 # generate titles, when applicable, from alma report xml
 class ReportParser
-  def self.title_from(row, medium)
+  def self.title_from(institution, row, medium)
     title_data = case medium
                  when 'electronic'
                    xml_hash_electronic row.element_children
@@ -11,7 +11,7 @@ class ReportParser
                  else
                    raise StandardError, 'Report medium error'
                  end
-    title_data[:institution] = institution title_data
+    title_data[:institution] = institution
     Title.new title_data.except(:institution_name, :institution_code)
   end
 
@@ -42,29 +42,33 @@ class ReportParser
         hash[:isbn] = node.text
       when 'Column3'
         hash[:mms_id] = node.text
-      when 'Column4'
-        hash[:publication_date] = node.text
+      # when 'Column4' # Network ID
+      #   hash[:tbd] = node.text
       when 'Column5'
-        hash[:publisher] = node.text
+        hash[:publication_date] = node.text
       when 'Column6'
-        hash[:subjects] = node.text
+        hash[:publisher] = node.text
       when 'Column7'
-        hash[:title] = node.text
-      when 'Column8'
-        hash[:call_number] = node.text
+        hash[:subjects] = node.text
+      # when 'Column8' # Suppressed from Discovery? Always NO
+      #   hash[:tbd] = node.text
       when 'Column9'
-        hash[:classification_code] = node.text
-      when 'Column10'
-        hash[:institution_code] = node.text
-      when 'Column11'
-        hash[:institution_name] = node.text
+        hash[:title] = node.text
+      # when 'Column10' # Now Normalize Call. Could be useful for genuine sorting
+      #   hash[:institution_code] = node.text
+      when 'Column11' # Perm Call #
+        hash[:call_number] = node.text
       when 'Column12'
-        hash[:library] = node.text
+        hash[:classification_code] = node.text
       when 'Column13'
         hash[:location] = node.text
-      when 'Column14'
+      when 'Column14' # Library Name
+        hash[:library] = node.text
+      # when 'Column15' # Location Name
+      #   hash[:location] = node.text
+      when 'Column16'
         hash[:material_type] = node.text
-      when 'Column15'
+      when 'Column17'
         hash[:receiving_date] = date_from node.text
       else
         next
@@ -79,29 +83,30 @@ class ReportParser
       case node.name
       when 'Column1'
         hash[:author] = node.text
+      when 'Column2'
+        hash[:isbn] = node.text
       when 'Column3'
-        hash[:mms_id] = node.text
+        hash[:call_number] = node.text
       when 'Column4'
-        hash[:subjects] = node.text
+        hash[:mms_id] = node.text
       when 'Column5'
-        hash[:title] = node.text
+        # hash[:] = node.text
       when 'Column6'
-        hash[:portfolio_name] = node.text
+        hash[:publication_date] = node.text
       when 'Column7'
-        hash[:institution_code] = node.text
+        hash[:publisher] = node.text
       when 'Column8'
-        hash[:institution_name] = node.text
+        hash[:subjects] = node.text
       when 'Column9'
-        hash[:classification_code] = node.text
+        # hash[:] = node.text
       when 'Column10'
-        date = date_from node.text
-        hash[:portfolio_activation_date] = date
-        # we should also consider this value the receiving date
-        hash[:receiving_date] = date
+        hash[:title] = node.text
       when 'Column11'
-        hash[:portfolio_creation_date] = date_from node.text
+        hash[:portfolio_name] = node.text
       when 'Column12'
-        hash[:availability] = node.text
+        date = node.text == '' ? '' : date_from(node.text)
+        hash[:portfolio_activation_date] = date
+        hash[:receiving_date] = date
       when 'Column13'
         hash[:material_type] = node.text
       else
@@ -112,6 +117,10 @@ class ReportParser
   end
 
   def self.date_from(val)
-    Date.parse val
+    str = val.gsub(/[^0-9]/, '')
+    return Date.strptime(val, '%Y') if str.length == 4
+    Date.parse str
+  rescue StandardError
+    nil
   end
 end

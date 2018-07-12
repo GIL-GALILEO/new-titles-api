@@ -1,31 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <style>
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
-
-    td, th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
-
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-  </style>
-  <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 </head>
+<div class="container">
+  <h1>New Titles</h1>
 
-
-<h1>New Titles</h1>
-
-<table id="titles" data-source="<%= sample_view_url(format: "json") %>">
-  <thead>
+  <table id="titles" class="table table-bordered table-hover" data-source="<%= sample_view_url(format: "json") %>">
+    <thead class="thead-light">
     <tr>
       <th>Received</th>
       <th>Title</th>
@@ -37,20 +25,18 @@
       <th>Institution</th>
       <th>Location</th>
     </tr>
-  </thead>
-  <tbody>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
 
-  </tbody>
-</table>
 
-
-<%= javascript_include_tag "application" %>
-
-<!--<script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-<script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-<script>
-    $(function(){
-        $("#titles").dataTable();
-    })
-</script>-->
-
+<script type="text/javascript" charset="utf-8">
+  var $table = $('#titles');
+    $table.dataTable({
+        sPaginationType: "full_numbers",
+        bProcessing: true,
+        bServerSide: true,
+        sAjaxSource: $table.data('source')
+    });
+</script>
