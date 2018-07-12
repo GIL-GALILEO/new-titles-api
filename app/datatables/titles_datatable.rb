@@ -22,10 +22,12 @@ class TitlesDatatable
           title.receiving_date,
           title.title,
           title.author,
+          title.material_type,
           title.publisher,
           title.call_number,
           title.mms_id,
-          title.inst_name
+          title.inst_name,
+          title.location
       ]
     end
   end
@@ -57,6 +59,6 @@ class TitlesDatatable
   end
 
   def sort_direction
-    params[:sSortDir_0] == "desc" ? "desc" : "asc"
+    params[:sSortDir_0] == "desc" ? "asc" : "desc"
   end
 end
