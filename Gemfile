@@ -17,7 +17,6 @@ gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.2'
 gem 'sass-rails'
 gem 'slack-notifier'
-gem 'therubyracer'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uglifier'
 
