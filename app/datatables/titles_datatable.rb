@@ -1,8 +1,10 @@
 class TitlesDatatable
   delegate :params,  to: :@view
+  delegate :institution, to: :@view
 
-  def initialize(view)
+  def initialize(view, institution = nil)
     @view = view
+    @institution = institution
   end
 
   def as_json(options = {})
@@ -26,8 +28,8 @@ class TitlesDatatable
           title.publisher,
           title.call_number,
           title.mms_id,
+          title.location,
           title.inst_name,
-          title.location
       ]
     end
   end
@@ -39,14 +41,15 @@ class TitlesDatatable
   def fetch_titles
     titles = Title.order("#{sort_column} #{sort_direction}")
     titles = titles.page(page).per(per_page)
+    titles = titles.where(institution: @institution) if @institution
     if params[:sSearch].present?
       titles = titles.where("title like :search or author like :search or publisher like :search or call_number like :search or mms_id like :search", search: "%#{params[:sSearch]}%")
     end
-    titles
+    titles.includes(:institution)
   end
 
   def page
-    params[:iDisplayStart].to_i/per_page + 1
+    params[:iDisplayStart].to_i / per_page + 1
   end
 
   def per_page
@@ -54,7 +57,9 @@ class TitlesDatatable
   end
 
   def sort_column
-    columns = %w[receiving_date title author publisher call_number mms_id inst_name]
+    # columns = %w[receiving_date title author publisher call_number mms_id inst_name]
+    columns = %w[receiving_date title material_type author publisher call_number mms_id location]
+    columns << 'institutions.name' unless @institution
     columns[params[:iSortCol_0].to_i]
   end
 
