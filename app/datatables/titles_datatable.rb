@@ -27,7 +27,7 @@ class TitlesDatatable
           title.material_type,
           title.publisher,
           title.call_number,
-          title.mms_id,
+          "<a href='#{fetch_url(title.inst_name)} + #{title.mms_id}'>" + title.mms_id + "</a>",
           title.location,
           title.inst_name,
       ]
@@ -46,6 +46,10 @@ class TitlesDatatable
       titles = titles.where("title like :search or author like :search or publisher like :search or call_number like :search or mms_id like :search", search: "%#{params[:sSearch]}%")
     end
     titles.includes(:institution)
+  end
+
+  def fetch_url (name)
+    Institution.find_by_name(name).url.to_s()
   end
 
   def page
