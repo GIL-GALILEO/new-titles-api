@@ -10,7 +10,16 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 </head>
 <div class="container">
-  <h1>New Titles <%= "for #{ @institution.name }" if @institution %></h1>
+  <div class="row align-items-center">
+    <div class="col">
+      <h1>New Titles <%= "for #{ @institution.name }" if @institution && !@institution.usg? %></h1>
+    </div>
+    <% if @institution && !@institution.usg? %>
+      <div class="col-3">
+        <%= image_tag @institution.image, class: 'img-fluid float-right' %>
+      </div>
+    <% end %>
+  </div>
 
   <div class="row">
     <div class="col">
@@ -38,7 +47,7 @@
           <th>Call No.</th>
           <th>MMSID</th>
           <th>Location</th>
-          <% unless @institution %><th>Institution</th><% end %>
+          <% unless @institution && !@institution.usg? %><th>Institution</th><% end %>
         </tr>
         </thead>
         <tbody></tbody>
