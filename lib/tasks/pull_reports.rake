@@ -10,7 +10,7 @@ task :get_new_titles, %i[institution type] => :environment do |_, args|
   # validate and set institutions
   institution = Institution.find_by_shortcode args[:institution]
   raise StandardError unless institution
-  slack.ping "Getting new `#{args[:type]}` titles for `#{institution.name}`" if Rails.env.production
+  slack.ping "Getting new `#{args[:type]}` titles for `#{institution.name}`" if Rails.env.production?
 
   # initiate and pull report
   report = TitlesReport.new institution, args[:type]
@@ -19,9 +19,9 @@ task :get_new_titles, %i[institution type] => :environment do |_, args|
   titles = report.titles
   if titles.any?
     outcome = Title.sync titles
-    slack.ping "New titles for `#{institution.shortcode}` updated. `#{outcome[:new]}` titles added and `#{outcome[:expired]}` expired." if Rails.env.production
+    slack.ping "New titles for `#{institution.shortcode}` updated. `#{outcome[:new]}` titles added and `#{outcome[:expired]}` expired." if Rails.env.production?
   else
-    slack.ping "No new titles received for `#{institution.shortcode}`" if Rails.env.production
+    slack.ping "No new titles received for `#{institution.shortcode}`" if Rails.env.production?
   end
 
 end
