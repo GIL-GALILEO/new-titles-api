@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_25_152406) do
+ActiveRecord::Schema.define(version: 2018_07_20_155048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2018_06_25_152406) do
     t.string "image"
     t.string "api_key"
     t.string "shortcode", null: false
+    t.string "url", null: false
   end
 
   create_table "titles", force: :cascade do |t|
