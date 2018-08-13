@@ -26,6 +26,7 @@ class TitlesDatatable
           title.material_type,
           title.publisher,
           title.call_number,
+          title.call_number_sort,
           "<a href='#{title.institution.url} + #{title.mms_id}'>" + title.mms_id + "</a>",
           title.location,
           title.inst_name,

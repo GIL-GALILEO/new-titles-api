@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_20_155048) do
+ActiveRecord::Schema.define(version: 2018_08_13_202326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2018_07_20_155048) do
     t.string "classification_code"
     t.string "availability"
     t.boolean "iz", default: false
+    t.string "call_number_sort"
     t.index ["institution_id"], name: "index_titles_on_institution_id"
   end
 
