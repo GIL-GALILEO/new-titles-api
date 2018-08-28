@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2018_08_13_202326) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "adminpack"
   enable_extension "plpgsql"
 
   create_table "institutions", force: :cascade do |t|
@@ -23,8 +22,8 @@ ActiveRecord::Schema.define(version: 2018_08_13_202326) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.string "api_key"
-    t.string "shortcode"
-    t.string "url"
+    t.string "shortcode", null: false
+    t.string "url", null: false
   end
 
   create_table "titles", force: :cascade do |t|
