@@ -28,8 +28,12 @@ class TitlesDatatable
           title.call_number,
           title.call_number_sort,
           "<a href='#{title.institution.url} + #{title.mms_id}'>" + title.mms_id + "</a>",
-          title.location,
-          title.inst_name,
+          title.library,
+          if institution_specified?
+            title.location
+          else
+            title.inst_name
+          end
       ]
     end
   end
