@@ -26,6 +26,7 @@ class TitlesDatatable
           title.material_type,
           title.publisher,
           title.call_number,
+          title.call_number_sort,
           "<a href='#{title.institution.url} + #{title.mms_id}'>" + title.mms_id + "</a>",
           title.location,
           title.inst_name,
@@ -58,7 +59,7 @@ class TitlesDatatable
   end
 
   def sort_column
-    columns = %w[receiving_date title material_type author publisher call_number mms_id location]
+    columns = %w[receiving_date title material_type author publisher call_number call_number_sort mms_id location]
     columns << 'institutions.name' unless @institution
     columns[params[:iSortCol_0].to_i]
   end

@@ -13,6 +13,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+vendor/bundle
 
 database.yml
 secrets.yml

@@ -54,8 +54,8 @@ class ReportParser
       #   hash[:tbd] = node.text
       when 'Column9'
         hash[:title] = node.text
-      # when 'Column10' # Now Normalize Call. Could be useful for genuine sorting
-      #   hash[:institution_code] = node.text
+      when 'Column10'
+        hash[:call_number_sort] = node.text
       when 'Column11' # Perm Call #
         hash[:call_number] = node.text
       when 'Column12'
