@@ -21,16 +21,16 @@
   <%= favicon_link_tag 'favicon.ico' %>
   <title>GIL New Titles</title>
   <style>
-    div.dt-buttons{
+    div.dt-buttons {
       float: left;
     }
 
-    div.titles_filter{
+    div.titles_filter {
       float: right;
     }
-     table{
-       table-layout: fixed;
-     }
+    table td {
+      word-break: break-word;
+    }
   </style>
 </head>
 <div class="container">
@@ -87,29 +87,17 @@
         bProcessing: true,
         bServerSide: true,
         columns: [
-            {orderData: 0, targets: 0, width: '70px'},
-            {orderData: 1, targets: 1, width: '200px'},
-            {orderData: 2, targets: 2, width: '100px'},
-            {orderData: 3, targets: 3, width: '70px'},
-            {orderData: 4, targets: 4, width: '120px'},
-            {orderData: [5,6], targets: 5, width: '90px'},
-            {targets: 6, visible: false, width: '70px'},
-            {orderData: 7, targets: 7, width: '150px'},
-            {orderData: 8, targets: 8, width: '150px'},
-            {orderData: 9, targets: 9, width: '150px'}
+            { orderData: 0, targets: 0 },
+            { orderData: 1, targets: 1 },
+            { orderData: 2, targets: 2 },
+            { orderData: 3, targets: 3 },
+            { orderData: 4, targets: 4 },
+            { orderData: [5,6], targets: 5 },
+            { targets: 6, visible: false },
+            { orderData: 7, targets: 7 },
+            { orderData: 8, targets: 8 },
+            { orderData: 9, targets: 9 }
             //TODO:  Trick the table into having the same # of columns between USG and inst views (replace Institution name with Location)
-            //{width: '70px'},
-            //{width: '200px'},
-            //{width: '100px'},
-            //{width: '70px'},
-            //{width: '120px'},
-            //{width: '90px'},
-            //{width: '70px'},
-            //{width: '150px'},
-            //{width: '150px'},
-           // {width: '150px'}
-
-
         ],
         dom: 'lBfrtip',
         colReorder: true,
