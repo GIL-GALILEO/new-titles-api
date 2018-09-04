@@ -81,7 +81,7 @@
 </div>
 
 <script type="text/javascript" charset="utf-8">
-  var $table = $('#titles');
+    var $table = $('#titles');
     $table.DataTable({
         sPaginationType: "full_numbers",
         bProcessing: true,
@@ -97,7 +97,6 @@
             { orderData: 7, targets: 7 },
             { orderData: 8, targets: 8 },
             { orderData: 9, targets: 9 }
-            //TODO:  Trick the table into having the same # of columns between USG and inst views (replace Institution name with Location)
         ],
         dom: 'lBfrtip',
         colReorder: true,
@@ -107,10 +106,6 @@
             'copy', 'csv'
         ]
     });
-
-  $("#institution-picker").change(function(){
-      window.location.href = '<%= table_view_url %>' + this.value;
-  });
 </script>
 
 

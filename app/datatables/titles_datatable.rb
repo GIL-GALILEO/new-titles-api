@@ -75,4 +75,5 @@ class TitlesDatatable
   def institution_specified?
     @institution && !@institution.usg?
   end
+
 end
