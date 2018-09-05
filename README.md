@@ -23,7 +23,7 @@ Optionally, you cna send a parameter to specify a media_type:
 #### Media Types
 
 See the [media type translation hash](https://github.com/GIL-GALILEO/new-titles-api/blob/f97b4c2823d754a428c549b08f4e88552ca50c19/app/controllers/titles_controller.rb#L36)
-for all available parameter values and the correspondinf Alma values.
+for all available parameter values and the corresponding Alma values.
 
 ### Response Object
 
