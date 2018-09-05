@@ -4,6 +4,8 @@
 
 USG Member Institutions can request an API key from [me](mailto:mak@uga.edu).
 
+A basic front-end powered by jQuery Datatables can be found at <https://newtitles.gil.usg.edu>
+
 ### Sending Requests
 
 _See the [titles spec file](https://github.com/GIL-GALILEO/new-titles-api/blob/master/spec/request/titles_spec.rb) for more guidance_
@@ -14,7 +16,7 @@ Your API Key should be sent in the HTTP Headers as:
 
 ```'X-User-Token': YOUR_API_KEY```
 
-The API Key will limit the returned record to only those from your institution.
+The API Key will limit the returned records to only those from your institution.
 
 Optionally, you cna send a parameter to specify a media_type:
 
