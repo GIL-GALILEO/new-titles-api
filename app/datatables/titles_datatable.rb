@@ -21,10 +21,10 @@ class TitlesDatatable
     titles.map do |title|
       [
           title.receiving_date,
-          title.title,
-          title.author,
+          title.title ? title.title.titleize : nil,
+          title.author ? title.author.titleize: nil,
           title.material_type,
-          title.publisher,
+          title.publisher ? title.publisher.titleize : nil,
           title.call_number,
           title.call_number_sort,
           "<a href='#{title.institution.url} + #{title.mms_id}'>" + title.mms_id + "</a>",
