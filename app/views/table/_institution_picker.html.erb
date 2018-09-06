@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col">
+    <form action="#">
+      <div class="form-group">
+        <label for="institution">Change Institution: </label>
+        <select name="institution" id="institution-picker" class="form-control">
+          <%= options_for_select(
+                  @institutions.order(:name).collect { |i| [i.name, i.shortcode] }, @institution&.shortcode
+              ) %>
+        </select>
+      </div>
+    </form>
+  </div>
+</div>
