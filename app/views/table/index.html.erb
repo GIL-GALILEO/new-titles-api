@@ -106,6 +106,9 @@
             'copy', 'csv'
         ]
     });
+    $("#institution-picker").change(function(){
+        window.location.href = '<%= table_view_url %>' + this.value;
+    });
 </script>
 
 
