@@ -21,13 +21,12 @@ class TitlesDatatable
     titles.map do |title|
       [
           title.receiving_date,
-          title.title,
-          title.author,
+          title.title ? "<a href='#{title.institution.url} + #{title.mms_id}'>#{title.title.titleize}</a>" : nil,
+          title.author ? title.author.titleize: nil,
           title.material_type,
-          title.publisher,
+          title.publisher ? title.publisher.titleize : nil,
           title.call_number,
           title.call_number_sort,
-          "<a href='#{title.institution.url} + #{title.mms_id}'>" + title.mms_id + "</a>",
           title.library,
           if institution_specified?
             title.location
@@ -49,7 +48,7 @@ class TitlesDatatable
       titles = titles.where(institution: @institution)
     end
     if params[:sSearch].present?
-      titles = titles.where("title like :search or author like :search or publisher like :search or call_number like :search or mms_id like :search", search: "%#{params[:sSearch]}%")
+      titles = titles.where("LOWER(title) like :search or LOWER(author) like :search or LOWER(publisher) like :search or LOWER(material_type) like :search or LOWER(call_number) like :search or LOWER(mms_id) like :search or LOWER(location) like :search", search: "%#{params[:sSearch]}%".downcase)
     end
     titles.includes(:institution)
   end
@@ -63,7 +62,7 @@ class TitlesDatatable
   end
 
   def sort_column
-    columns = %w[receiving_date title material_type author publisher call_number call_number_sort mms_id location]
+    columns = %w[receiving_date title material_type author publisher call_number call_number_sort location]
     columns << 'institutions.name' unless @institution
     columns[params[:iSortCol_0].to_i]
   end

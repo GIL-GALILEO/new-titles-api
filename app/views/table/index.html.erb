@@ -44,18 +44,7 @@
       </div>
     <% end %>
   </div>
-  <div class="row">
-    <div class="col">
-      <form action="#">
-        <div class="form-group">
-          <label for="institution">Change Institution: </label>
-          <select name="institution" id="institution-picker" class="form-control">
-            <%= options_for_select(@institutions.collect { |i| [i.name, i.shortcode] }, @institution&.shortcode) %>
-          </select>
-        </div>
-      </form>
-    </div>
-  </div>
+  <%= render 'institution_picker' %>
   <div class="row">
     <div class="col">
       <table id="titles" class="table table-bordered table-hover" data-source="<%= table_view_url(institution: @institution, format: "json") %>">
@@ -68,7 +57,6 @@
           <th>Publisher</th>
           <th>Call No.</th>
           <th>Norm. Call No.</th>
-          <th>MMSID</th>
           <th>Library</th>
           <% if @institution && !@institution.usg? %><th>Location</th><% end%>
           <% unless @institution && !@institution.usg? %><th>Institution</th><% end %>
@@ -95,9 +83,8 @@
             { orderData: [5,6], targets: 5 },
             { targets: 6, visible: false },
             { orderData: 7, targets: 7 },
-            { orderData: 8, targets: 8 },
-            { orderData: 9, targets: 9 }
-        ],
+            { orderData: 8, targets: 8 }
+          ],
         dom: 'lBfrtip',
         colReorder: true,
         sAjaxSource: $table.data('source'),
@@ -105,6 +92,9 @@
         buttons: [
             'copy', 'csv'
         ]
+    });
+    $("#institution-picker").change(function(){
+        window.location.href = '<%= table_view_url %>' + this.value;
     });
 </script>
 
