@@ -13,6 +13,7 @@ gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'pg', '~> 0.21.0'
 gem 'puma', '~> 3.7'
+gem 'rack-cors'
 gem 'rails', '~> 5.2'
 gem 'slack-notifier'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
