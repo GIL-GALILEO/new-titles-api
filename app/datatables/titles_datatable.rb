@@ -48,7 +48,7 @@ class TitlesDatatable
       titles = titles.where(institution: @institution)
     end
     if params[:sSearch].present?
-      titles = titles.where("title like :search or author like :search or publisher like :search or material_type like :search or call_number like :search or mms_id like :search or location like :search", search: "%#{params[:sSearch]}%")
+      titles = titles.where("LOWER(title) like :search or LOWER(author) like :search or LOWER(publisher) like :search or LOWER(material_type) like :search or LOWER(call_number) like :search or LOWER(mms_id) like :search or LOWER(location) like :search", search: "%#{params[:sSearch]}%".downcase)
     end
     titles.includes(:institution)
   end
