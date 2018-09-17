@@ -10,7 +10,7 @@ task :get_new_titles, %i[institution type report_override] => :environment do |_
   # validate and set institutions
   institution = Institution.find_by_shortcode args[:institution]
   raise StandardError unless institution
-  slack.ping "Getting new `#{args[:type]}` titles for `#{institution.name}`" if Rails.env.production?
+  # slack.ping "Getting new `#{args[:type]}` titles for `#{institution.name}`" if Rails.env.production?
 
   # initiate and pull report
   report = TitlesReport.new institution, args[:type], args[:report_override]
