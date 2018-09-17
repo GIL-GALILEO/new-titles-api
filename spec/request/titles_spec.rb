@@ -28,5 +28,12 @@ describe TitlesController, type: :request do
           headers: headers
       expect(JSON.parse(response.body)[0]['material_type']).to eq 'DVD'
     end
+    it 'returns only titles for a specified location' do
+      Fabricate(:title, location: 'Main Library - Second Floor (Rotunda)', institution: institution)
+      get list_path,
+          params: { location: 'Main Library - Second Floor (Rotunda)' },
+          headers: headers
+      expect(JSON.parse(response.body)[0]['location']).to eq 'Main Library - Second Floor (Rotunda)'
+    end
   end
 end

@@ -22,6 +22,10 @@ Optionally, you cna send a parameter to specify a media_type:
 
 `https://newtitles.gil.usg.edu/api/v1/list?media_type=DVD`
 
+Or, you can limit by location value (be sure to URL encode values):
+
+`https://newtitles.gil.usg.edu/api/v1/list?location=Main+Library+-+Second+Floor+%28Rotunda%29`
+
 #### Media Types
 
 See the [media type translation hash](https://github.com/GIL-GALILEO/new-titles-api/blob/f97b4c2823d754a428c549b08f4e88552ca50c19/app/controllers/titles_controller.rb#L36)
