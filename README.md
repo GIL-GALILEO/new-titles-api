@@ -43,7 +43,7 @@ The response will be a JSON array of title objects, e.g.:
         "publisher":"Publisher", 
         "call_number":"LC Call number", 
         "library":"Library at your Institutions", 
-        "location":"Location at your Institution, 
+        "location":"Location at your Institution", 
         "material_type":"Alma media type", 
         "receiving_date":"2018-09-05", 
         "mms_id":"5096308454493377", 
@@ -53,7 +53,7 @@ The response will be a JSON array of title objects, e.g.:
         "portfolio_name":"For elecronic records", 
         "portfolio_activation_date":"For electronic records", 
         "portfolio_creation_date":"For electronic records", 
-        "classification_code":"LC Classification code, if available, 
+        "classification_code":"LC Classification code, if available", 
         "availability":"Alma title availability", 
         "call_number_sort":"Sortable version of call number", 
         "inst_name":"Your Institution"
