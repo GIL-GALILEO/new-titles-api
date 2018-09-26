@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-# Pull Report - Testing new Style
-task :get_new_titles, %i[institution type] => :environment do |_, args|
+# Pull Report
+task :get_new_titles, %i[institution type report_override] => :environment do |_, args|
   slack = Slack::Notifier.new Rails.application.secrets.slack_worker_webhook
 
   # ensure valid type
@@ -10,10 +10,10 @@ task :get_new_titles, %i[institution type] => :environment do |_, args|
   # validate and set institutions
   institution = Institution.find_by_shortcode args[:institution]
   raise StandardError unless institution
-  slack.ping "Getting new `#{args[:type]}` titles for `#{institution.name}`" if Rails.env.production?
+  # slack.ping "Getting new `#{args[:type]}` titles for `#{institution.name}`" if Rails.env.production?
 
   # initiate and pull report
-  report = TitlesReport.new institution, args[:type]
+  report = TitlesReport.new institution, args[:type], args[:report_override]
 
   # get titles from report
   titles = report.titles

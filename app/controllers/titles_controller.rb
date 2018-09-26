@@ -12,8 +12,9 @@ class TitlesController < ApplicationController
     # filter by media type
     if params[:media_type]
       media_types = media_types_map[params[:media_type].downcase.to_sym]
-      @titles = @titles.where(material_type: media_types) if media_types.any?
+      @titles = @titles.where(material_type: media_types) if media_types&.any?
     end
+    @titles = @titles.where(location: params[:location]) if params[:location]
     render json: @titles.to_json(
       except: %i[id created_at updated_at institution_id],
       methods: :inst_name

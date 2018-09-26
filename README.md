@@ -22,6 +22,10 @@ Optionally, you cna send a parameter to specify a media_type:
 
 `https://newtitles.gil.usg.edu/api/v1/list?media_type=DVD`
 
+Or, you can limit by location value (be sure to URL encode values):
+
+`https://newtitles.gil.usg.edu/api/v1/list?location=Main+Library+-+Second+Floor+%28Rotunda%29`
+
 #### Media Types
 
 See the [media type translation hash](https://github.com/GIL-GALILEO/new-titles-api/blob/f97b4c2823d754a428c549b08f4e88552ca50c19/app/controllers/titles_controller.rb#L36)
@@ -39,7 +43,7 @@ The response will be a JSON array of title objects, e.g.:
         "publisher":"Publisher", 
         "call_number":"LC Call number", 
         "library":"Library at your Institutions", 
-        "location":"Location at your Institution, 
+        "location":"Location at your Institution", 
         "material_type":"Alma media type", 
         "receiving_date":"2018-09-05", 
         "mms_id":"5096308454493377", 
@@ -49,7 +53,7 @@ The response will be a JSON array of title objects, e.g.:
         "portfolio_name":"For elecronic records", 
         "portfolio_activation_date":"For electronic records", 
         "portfolio_creation_date":"For electronic records", 
-        "classification_code":"LC Classification code, if available, 
+        "classification_code":"LC Classification code, if available", 
         "availability":"Alma title availability", 
         "call_number_sort":"Sortable version of call number", 
         "inst_name":"Your Institution"

@@ -12,7 +12,8 @@ class ReportParser
                    raise StandardError, 'Report medium error'
                  end
     title_data[:institution] = institution
-    Title.new title_data.except(:institution_name, :institution_code)
+    title_data = finalize_location_for(title_data) if title_data.key?(:temporary_location)
+    Title.new title_data.except(:institution_name, :institution_code, :temporary_location)
   end
 
   def self.institution(title_data)
@@ -70,6 +71,8 @@ class ReportParser
         hash[:material_type] = node.text
       when 'Column17'
         hash[:receiving_date] = date_from node.text
+      when 'Column18'
+        hash[:temporary_location] = node.text
       else
         next
       end
@@ -122,5 +125,10 @@ class ReportParser
     Date.parse str
   rescue StandardError
     nil
+  end
+
+  def self.finalize_location_for(hash)
+    hash[:location] = hash[:temporary_location] if hash[:temporary_location] && hash[:temporary_location] != 'None'
+    hash
   end
 end

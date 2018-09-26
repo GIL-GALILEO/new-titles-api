@@ -5,7 +5,7 @@
 class TitlesReport
   attr_accessor :institution, :titles, :failed_rows, :medium, :calls
 
-  def initialize(institution, type)
+  def initialize(institution, type, report_override = nil)
     @titles = []
     @failed_rows = []
     @calls = 0
@@ -14,7 +14,7 @@ class TitlesReport
     token = nil
     while unfinished
       query = { limit: 500, col_names: false }
-      query[:path] = compose_query(institution, type) unless token
+      query[:path] = compose_query(institution, type, report_override) unless token
       query[:token] = token if token
       response = AlmaReportsApi.call query, institution
       raise(StandardError, "Response not successful [call ##{calls}]: #{response&.message}") unless response&.success?
@@ -28,8 +28,12 @@ class TitlesReport
 
   private
 
-  def compose_query(institution, type)
-    "/shared/#{institution.name}/Reports/New Titles #{type.capitalize}"
+  def compose_query(institution, type, report_override)
+    if report_override
+      "/shared/#{institution.name}/Reports/#{report_override}"
+    else
+      "/shared/#{institution.name}/Reports/New Titles #{type.capitalize}"
+    end
   end
 
   def token_from(xml_doc)
