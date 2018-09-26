@@ -57,7 +57,7 @@ Institution.create!(
       institution_code: '01GALI_FTVALLEY',
       image: 'https://galileo-usg-fvsu-primo.hosted.exlibrisgroup.com/primo-explore/custom/FVSU_V1/img/library-logo.png',
       url: 'https://galileo-usg-fvsu-primo.hosted.exlibrisgroup.com/primo-explore/search?vid=FVSU_V1&search_scope=FVSU&query=addsrcrid,exact,'},
-    { name: 'Georgia College & State University',
+    { name: 'Georgia College',
       shortcode: 'gcsu',
       institution_code: '01GALI_GCSU',
       image: 'https://galileo-usg-gcsu-primo.hosted.exlibrisgroup.com/primo-explore/custom/GCSU_V1/img/library-logo.png',
