@@ -35,6 +35,11 @@ describe Title do
       Title.expire_titles(Title.last.institution)
       expect(Title.count).to eq 0
     end
+    it 'does not expire a less than 90 days old' do
+      Fabricate(:title, created_at: Time.now - 40.days)
+      Title.expire_titles(Title.last.institution)
+      expect(Title.count).to eq 1
+    end
   end
 
 end
