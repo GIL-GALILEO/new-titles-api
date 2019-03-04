@@ -13,6 +13,10 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'webmock/rspec'
+
+
+
 RSpec.configure do |config|
 
   # Load application seeds, initialize database cleaner

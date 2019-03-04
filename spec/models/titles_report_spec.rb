@@ -32,8 +32,8 @@ describe 'TitlesReport' do
     end
   end
   describe '.create' do
-    # TODO: SN 3/4/19, Need to find alternative to getting an Institution from open record.
-    # However, may involve retructuring report_parser.rb
+    # TODO: SN 3/4/19, Need to find alternative to getting an Institution from active record.
+    # However, this will involve restructuring report_parser.rb
     let(:institution){
       Institution.find_by_shortcode('uga')
     }
