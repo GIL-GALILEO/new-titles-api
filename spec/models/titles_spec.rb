@@ -32,7 +32,8 @@ describe Title do
   context 'sync functionality' do
     it 'expires a title more than 90 days old' do
       Fabricate(:title, created_at: Time.now - 100.days)
-      Title.expire_titles(Title.last.institution)
+      outcome = Title.expire_titles(Title.last.institution)
+      expect(outcome).to eq 1
       expect(Title.count).to eq 0
     end
     it 'does not expire a less than 90 days old' do

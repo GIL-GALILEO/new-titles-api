@@ -25,7 +25,8 @@ class Title < ApplicationRecord
   def self.expire_titles(institution)
     old_titles = Title.where(institution: institution)
                       .where('created_at < ?', EXPIRE_AFTER_DAYS.days.ago)
+    expired = old_titles.length
     old_titles.destroy_all
-    old_titles.length
+    expired
   end
 end
