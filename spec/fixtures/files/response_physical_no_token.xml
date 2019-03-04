@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+	<QueryResult>
+		<IsFinished>true</IsFinished>
+		<ResultXml>
+			<rowset xmlns="urn:schemas-microsoft-com:xml-analysis:rowset">
+				<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:saw-sql="urn:saw-sql" targetNamespace="urn:schemas-microsoft-com:xml-analysis:rowset">
+					<xsd:complexType name="Row">
+						<xsd:sequence>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column0" saw-sql:columnHeading="0" saw-sql:displayFormula="saw_0" saw-sql:tableHeading="" saw-sql:type="integer" type="xsd:int"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column1" saw-sql:columnHeading="Author" saw-sql:displayFormula="saw_1" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column2" saw-sql:columnHeading="ISBN" saw-sql:displayFormula="saw_2" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column3" saw-sql:columnHeading="MMS Id" saw-sql:displayFormula="saw_3" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column4" saw-sql:columnHeading="Network Id" saw-sql:displayFormula="saw_4" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column5" saw-sql:columnHeading="Publication Date" saw-sql:displayFormula="saw_5" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column6" saw-sql:columnHeading="Publisher" saw-sql:displayFormula="saw_6" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column7" saw-sql:columnHeading="Subjects" saw-sql:displayFormula="saw_7" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column8" saw-sql:columnHeading="Suppressed From Discovery" saw-sql:displayFormula="saw_8" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column9" saw-sql:columnHeading="Title" saw-sql:displayFormula="saw_9" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column10" saw-sql:columnHeading="Normalized Call Number" saw-sql:displayFormula="saw_10" saw-sql:tableHeading="Holding Details" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column11" saw-sql:columnHeading="Permanent Call Number" saw-sql:displayFormula="saw_11" saw-sql:tableHeading="Holding Details" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column12" saw-sql:columnHeading="Permanent LC Classification Code" saw-sql:displayFormula="saw_12" saw-sql:tableHeading="Holding Details" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column13" saw-sql:columnHeading="External Name" saw-sql:displayFormula="saw_13" saw-sql:tableHeading="Location" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column14" saw-sql:columnHeading="Library Name" saw-sql:displayFormula="saw_14" saw-sql:tableHeading="Location" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column15" saw-sql:columnHeading="Location Name" saw-sql:displayFormula="saw_15" saw-sql:tableHeading="Location" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column16" saw-sql:columnHeading="Material Type" saw-sql:displayFormula="saw_16" saw-sql:tableHeading="Physical Item Details" saw-sql:type="varchar" type="xsd:string"/>
+							<xsd:element maxOccurs="1" minOccurs="0" name="Column17" saw-sql:columnHeading="Receiving   Date" saw-sql:displayFormula="saw_17" saw-sql:tableHeading="Physical Item Details" saw-sql:type="date" type="xsd:date"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:schema>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>MURRAY, SAMANTHA</Column1>
+					<Column2>9781137579706; 1137579706</Column2>
+					<Column3>9949154265602959</Column3>
+					<Column4>9916067145102931</Column4>
+					<Column5>2016</Column5>
+					<Column6>PALGRAVE MACMILLAN</Column6>
+					<Column8>No</Column8>
+					<Column9>'FAT' FEMALE BODY.</Column9>
+					<Column11>Unknown</Column11>
+					<Column12>Unknown</Column12>
+					<Column13>On Order for Science Stacks</Column13>
+					<Column14>Science Library</Column14>
+					<Column15>1On Order for Sci Stacks</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>Licitra, Josefina, 1975- author.</Column1>
+					<Column2>9974891450; 9789974891456</Column2>
+					<Column3>9949169872002959</Column3>
+					<Column4>9916307052902931</Column4>
+					<Column5>2018.</Column5>
+					<Column6>Seix Barral; Editorial Planeta</Column6>
+					<Column7>Cárcel de Mujeres (Montevideo, Uruguay)--Fiction.; Cárcel de Mujeres (Montevideo, Uruguay); Escapes--Uruguay--Montevideo--Fiction.; Women prisoners--Uruguay--Montevideo--Fiction.; Women political prisoners--Uruguay--Montevideo--Fiction.; Escapes.; Women political prisoners.; Women prisoners.; Uruguay--Montevideo.; Fiction.</Column7>
+					<Column8>No</Column8>
+					<Column9>38 estrellas : la mayor fuga de una cárcel de mujeres de la historia /</Column9>
+					<Column10>0pq#7798.422 i258 a614 2018</Column10>
+					<Column11>PQ7798.422.I258 A614 2018</Column11>
+					<Column12>PQ</Column12>
+					<Column13>On Order for Stacks</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1On Order for Stacks</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column2>0500239819; 9780500239810</Column2>
+					<Column3>9949158653302959</Column3>
+					<Column4>9915037850502931</Column4>
+					<Column5>2018.</Column5>
+					<Column6>Thames &amp; Hudson</Column6>
+					<Column7>Art--History.; Art, European--History.; Art, European.; Art.; History.</Column7>
+					<Column8>No</Column8>
+					<Column9>A chronology of art : a timeline of Western culture from prehistory to the present /</Column9>
+					<Column10>0n#5300 c573 2018</Column10>
+					<Column11>N5300 .C573 2018</Column11>
+					<Column12>N</Column12>
+					<Column13>On Order for Stacks</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1On Order for Stacks</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-26</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>Hoberman, Michael, author.</Column1>
+					<Column2>0813589703; 9780813589701; 081358969X; 9780813589695; 9780813589718; 0813589711; 9780813589732; 0813589738; 9780813589725; 081358972X</Column2>
+					<Column3>9949164256702959</Column3>
+					<Column4>9916214049302931</Column4>
+					<Column5>[2019]</Column5>
+					<Column6>Rutgers University Press</Column6>
+					<Column7>American literature--Jewish authors--History and criticism.; American literature--Jewish authors.; Geography in literature.; Jews in literature.; Criticism, interpretation, etc.</Column7>
+					<Column8>No</Column8>
+					<Column9>A hundred acres of America : the geography of Jewish American literary history /</Column9>
+					<Column10>0ps"153 j4 h63 2019</Column10>
+					<Column11>PS153.J4 H63 2019</Column11>
+					<Column12>PS</Column12>
+					<Column13>Main 3rd floor</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1Main P - 3rd</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column2>0252083962; 9780252083969; 0252042212; 9780252042218</Column2>
+					<Column3>9949164152302959</Column3>
+					<Column4>9916214046602931</Column4>
+					<Column5>[2019]</Column5>
+					<Column6>University of Illinois Press</Column6>
+					<Column7>Immigrants--United States--History--20th century.; Emigration and immigration.; Emigration and immigration--Government policy.; Immigrants.; United States--Emigration and immigration--History--20th century.; United States--Emigration and immigration--Government policy.; United States.; History.</Column7>
+					<Column8>No</Column8>
+					<Column9>A nation of immigrants reconsidered : US society in an age of restriction, 1924-1965 /</Column9>
+					<Column10>0jv#6455 n37 2019</Column10>
+					<Column11>JV6455 .N37 2019</Column11>
+					<Column12>JV</Column12>
+					<Column13>Main 6th floor</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1Main JA-JX - 6th</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>Barnet, Sylvan, author.</Column1>
+					<Column2>9780205886999; 020588699X; 9780205933495; 0205933491; 9780205949526; 0205949525</Column2>
+					<Column3>9949162168502959</Column3>
+					<Column4>9911093999202931</Column4>
+					<Column5>[2015]</Column5>
+					<Column6>Pearson Education Inc</Column6>
+					<Column7>Art criticism--Authorship.</Column7>
+					<Column8>No</Column8>
+					<Column9>A short guide to writing about art /</Column9>
+					<Column10>0n#7476 b37 2015</Column10>
+					<Column11>N7476 .B37 2015</Column11>
+					<Column12>N</Column12>
+					<Column13>On Order for Stacks</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1On Order for Stacks</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-26</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>HURST, ELISE</Column1>
+					<Column2>9781524714543; 1524714542</Column2>
+					<Column3>9949152369302959</Column3>
+					<Column4>9916057750302931</Column4>
+					<Column5>2018</Column5>
+					<Column6>ALFRED A KNOPF</Column6>
+					<Column8>No</Column8>
+					<Column9>ADELAIDE'S SECRET WORLD.</Column9>
+					<Column11>Unknown</Column11>
+					<Column12>Unknown</Column12>
+					<Column13>Aderhold 2nd floor Curriculum Materials Library</Column13>
+					<Column14>Curriculum Materials Library</Column14>
+					<Column15>5CML Juvenile</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>HAKA, HASANA AJIJULA, 1939-</Column1>
+					<Column2>9780857425027; 0857425021</Column2>
+					<Column3>9949154370202959</Column3>
+					<Column4>9916067050602931</Column4>
+					<Column5>2018</Column5>
+					<Column6>SEAGULL BOOKS</Column6>
+					<Column8>No</Column8>
+					<Column9>AGONY OF THE GHOST: AND OTHER STORIES; TRANS. BY BHASKAR CHATTOPADHYAY.</Column9>
+					<Column11>Unknown</Column11>
+					<Column12>Unknown</Column12>
+					<Column13>On Order for Stacks</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1On Order for Stacks</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>HORTA, PAULO LEMOS</Column1>
+					<Column2>9781631495168; 163149516X</Column2>
+					<Column3>9949152369202959</Column3>
+					<Column4>9916057750202931</Column4>
+					<Column5>2019</Column5>
+					<Column6>LIVERIGHT PUBLISHING CORP</Column6>
+					<Column8>No</Column8>
+					<Column9>ALADDIN: A NEW TRANSLATION.</Column9>
+					<Column11>Unknown</Column11>
+					<Column12>Unknown</Column12>
+					<Column13>Aderhold 2nd floor Curriculum Materials Library</Column13>
+					<Column14>Curriculum Materials Library</Column14>
+					<Column15>5CML Juvenile</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>STREEVER, BILL</Column1>
+					<Column2>9780316410601; 0316410608</Column2>
+					<Column3>9949154366702959</Column3>
+					<Column4>9916067046502931</Column4>
+					<Column5>2016</Column5>
+					<Column6>LITTLE BROWN</Column6>
+					<Column8>No</Column8>
+					<Column9>AND SOON I HEARD A ROARING WIND: A NATURAL HISTORY OF MOVING AIR.</Column9>
+					<Column11>Unknown</Column11>
+					<Column12>Unknown</Column12>
+					<Column13>On Order for Science Stacks</Column13>
+					<Column14>Science Library</Column14>
+					<Column15>1On Order for Sci Stacks</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>YOUNG, DAMON</Column1>
+					<Column2>9781947534025; 1947534025</Column2>
+					<Column3>9949154369202959</Column3>
+					<Column4>9916067049402931</Column4>
+					<Column5>2018</Column5>
+					<Column6>SCRIBE PUBLICATIONS</Column6>
+					<Column8>No</Column8>
+					<Column9>ART OF READING.</Column9>
+					<Column11>Unknown</Column11>
+					<Column12>Unknown</Column12>
+					<Column13>On Order for Stacks</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1On Order for Stacks</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>JHABVALA, RUTH PRAWER, 1927-2013</Column1>
+					<Column2>9781640091375; 1640091378</Column2>
+					<Column3>9949154252302959</Column3>
+					<Column4>9916067129702931</Column4>
+					<Column5>2018</Column5>
+					<Column6>COUNTERPOINT</Column6>
+					<Column8>No</Column8>
+					<Column9>AT THE END OF THE CENTURY: THE STORIES OF RUTH PRAWER JHABVALA.</Column9>
+					<Column11>Unknown</Column11>
+					<Column12>Unknown</Column12>
+					<Column13>On Order for Stacks</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1On Order for Stacks</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>BETTRIDGE, JOEL</Column1>
+					<Column2>9781138599710; 1138599719</Column2>
+					<Column3>9949154256002959</Column3>
+					<Column4>9916067134502931</Column4>
+					<Column5>2018</Column5>
+					<Column6>ROUTLEDGE</Column6>
+					<Column8>No</Column8>
+					<Column9>AVANT-GARDE PIETIES: AESTHETICS, RACE, AND THE RENEWAL OF INNOVATIVE POETICS.</Column9>
+					<Column11>Unknown</Column11>
+					<Column12>Unknown</Column12>
+					<Column13>On Order for Stacks</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1On Order for Stacks</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-26</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>Roubik, David W. 1951- (David Ward),</Column1>
+					<Column2>9789968702942; 9968702943</Column2>
+					<Column3>9949168472102959</Column3>
+					<Column4>9916307243902931</Column4>
+					<Column5>2004.</Column5>
+					<Column6>Instituto Nacional de Biodiversidad INBio</Column6>
+					<Column7>Apidae--Latin America.; Apidae--Latin America--Identification.; Apidae.; Latin America.; Field guides.</Column7>
+					<Column8>No</Column8>
+					<Column9>Abejas de orquídeas de la América tropical : biología y guía de campo = Orchid bees of tropical America : biology and field guide /</Column9>
+					<Column10>0ql"568 a6 r68 2004</Column10>
+					<Column11>QL568.A6 R68 2004</Column11>
+					<Column12>QL</Column12>
+					<Column13>Science 4th floor</Column13>
+					<Column14>Science Library</Column14>
+					<Column15>1Sci QH-QR - 4th</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-26</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>Academy of Management.</Column1>
+					<Column3>993312843902959</Column3>
+					<Column4>9910065438902931</Column4>
+					<Column6>Academy of Management</Column6>
+					<Column7>Industrial management--Periodicals.; Commerce.; Organization and Administration.; Industrial management.; Periodical.; Periodicals.; Electronic journals.</Column7>
+					<Column8>No</Column8>
+					<Column9>Academy of Management journal.</Column9>
+					<Column10>0hd!28 a16</Column10>
+					<Column11>HD28 .A16</Column11>
+					<Column12>HD</Column12>
+					<Column13>Main 5th floor</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1Main H - 5th</Column15>
+					<Column16>Issue</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column3>996568253902959</Column3>
+					<Column4>9910123953702931</Column4>
+					<Column6>Kline Geology Laboratory Yale University</Column6>
+					<Column7>Science--Periodicals.; Science.; Periodicals.</Column7>
+					<Column8>No</Column8>
+					<Column9>American journal of science.</Column9>
+					<Column10>0q 1 a512</Column10>
+					<Column11>Q1 .A512</Column11>
+					<Column12>Q</Column12>
+					<Column13>Off-site Storage--Sign in to request</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>5Repository</Column15>
+					<Column16>Issue</Column16>
+					<Column17>2019-02-26</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column3>9913790133902959</Column3>
+					<Column4>9910242854002931</Column4>
+					<Column5>[1891]-</Column5>
+					<Column6>Times Pub Co</Column6>
+					<Column7>Americus (Ga.)--Newspapers.; Sumter County (Ga.)--Newspapers.; Georgia--Americus.; Georgia--Sumter County.; Newspapers.</Column7>
+					<Column8>No</Column8>
+					<Column9>Americus times-recorder.</Column9>
+					<Column10>0an!13 a5 a52</Column10>
+					<Column11>AN13.A5 A52</Column11>
+					<Column12>AN</Column12>
+					<Column13>GANP Processing</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>8GANP Processing</Column15>
+					<Column16>Issue</Column16>
+					<Column17>2019-02-26</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>Profumo, Stefano, 1978- author.</Column1>
+					<Column2>1786340003; 9781786340009; 1786340011; 9781786340016</Column2>
+					<Column3>9949154372602959</Column3>
+					<Column4>9916067053602931</Column4>
+					<Column5>[2017]</Column5>
+					<Column6>World Scientific</Column6>
+					<Column7>Dark matter (Astronomy); Particles (Nuclear physics)</Column7>
+					<Column8>No</Column8>
+					<Column9>An introduction to particle dark matter /</Column9>
+					<Column10>0qb"791.3 p756 2017</Column10>
+					<Column11>QB791.3 .P756 2017</Column11>
+					<Column12>QB</Column12>
+					<Column13>Science 3rd floor</Column13>
+					<Column14>Science Library</Column14>
+					<Column15>1Sci Q-QE - 3rd</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column2>9780190237028; 0190237023</Column2>
+					<Column3>9949152370602959</Column3>
+					<Column4>9915904334402931</Column4>
+					<Column5>[2018]</Column5>
+					<Column6>Oxford University Press</Column6>
+					<Column7>Women composers.; Composition (Music); Musical analysis.</Column7>
+					<Column8>No</Column8>
+					<Column9>Analytical essays on music by women composers : secular &amp; sacred music to 1900 /</Column9>
+					<Column10>0mt!90 a53 2018</Column10>
+					<Column11>MT90 .A53 2018</Column11>
+					<Column12>MT</Column12>
+					<Column13>On Order for Stacks</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1On Order for Stacks</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-26</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>Boghiguian, Anna, artist, author.</Column1>
+					<Column2>885723701X; 9788857237015</Column2>
+					<Column3>9949169873802959</Column3>
+					<Column4>9916306551402931</Column4>
+					<Column5>2017.</Column5>
+					<Column6>Skira</Column6>
+					<Column7>Boghiguian, Anna--Exhibitions.; Boghiguian, Anna.; Boghiguian, Anna--1946-; Malerei; Skripturale Kunst; Exhibition catalogs.</Column7>
+					<Column8>No</Column8>
+					<Column9>Anna Boghiguian /</Column9>
+					<Column10>0n#7385 b64 a4 2017</Column10>
+					<Column11>N7385.B64 A4 2017</Column11>
+					<Column12>N</Column12>
+					<Column13>On Order for Stacks</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1On Order for Stacks</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>Schlossberg, David, author.</Column1>
+					<Column2>1119220750; 9781119220756; 9781119220770; 1119220777</Column2>
+					<Column3>9949154262802959</Column3>
+					<Column4>9916067141302931</Column4>
+					<Column5>2017.</Column5>
+					<Column6>Wiley Blackwell</Column6>
+					<Column7>Antibiotics--Handbooks, manuals, etc.; Anti-infective agents--Therapeutic use--Handbooks, manuals, etc.; Bacterial diseases--Chemotherapy--Handbooks, manuals, etc.; Anti-Bacterial Agents--administration &amp; dosage.; Anti-Bacterial Agents--therapeutic use.; Anti-infective agents--Therapeutic use.; Antibiotics.; Bacterial diseases--Chemotherapy.; Handbook.; Handbooks and manuals.</Column7>
+					<Column8>No</Column8>
+					<Column9>Antibiotics manual : a guide to commonly used antimicrobials /</Column9>
+					<Column10>0rm"267 s352 2017</Column10>
+					<Column11>RM267 .S352 2017</Column11>
+					<Column12>RM</Column12>
+					<Column13>Science 4th floor</Column13>
+					<Column14>Science Library</Column14>
+					<Column15>1Sci R - 4th</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>Umpierrez, Alejo.</Column1>
+					<Column2>9789974675919; 997467591X</Column2>
+					<Column3>9949169871402959</Column3>
+					<Column5>2018.</Column5>
+					<Column6>Libreria Linardi y Risso</Column6>
+					<Column8>No</Column8>
+					<Column9>Antropofagias /</Column9>
+					<Column11>Unknown</Column11>
+					<Column12>Unknown</Column12>
+					<Column13>On Order for Stacks</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1On Order for Stacks</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column3>9949170073302959</Column3>
+					<Column4>9916307053702931</Column4>
+					<Column5>[2017]</Column5>
+					<Column6>Numero Group</Column6>
+					<Column7>Popular music--1961-1970.; Popular music.; 1961-1970; Soul music.; Rhythm and blues music.; Songs.; Live sound recordings.</Column7>
+					<Column8>No</Column8>
+					<Column9>Any other way /</Column9>
+					<Column10>0m#1630.18 s53 a59 2017</Column10>
+					<Column11>M1630.18.S53 A59 2017</Column11>
+					<Column12>M</Column12>
+					<Column13>On Order for Stacks</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1On Order for Stacks</Column15>
+					<Column16>Sound Recording</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column3>993349203902959</Column3>
+					<Column4>9910179501902931</Column4>
+					<Column5>1952-</Column5>
+					<Column6>Aperture Foundation; Aperture; Minor White</Column6>
+					<Column7>Photography--Periodicals.; Photography.; Photography; Electronic journals.; Periodicals--U.S.A.--1952-9999.; Periodicals.; Photographs.; Serial publications.; Little magazines--United States.</Column7>
+					<Column8>No</Column8>
+					<Column9>Aperture.</Column9>
+					<Column10>0tr 1 a62</Column10>
+					<Column11>TR1 .A62</Column11>
+					<Column12>TR</Column12>
+					<Column13>Main 7th floor</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1Main TR - 7th</Column15>
+					<Column16>Issue</Column16>
+					<Column17>2019-02-26</Column17>
+				</Row>
+				<Row>
+					<Column0>0</Column0>
+					<Column1>Campbell, Ian, 1967- author.</Column1>
+					<Column2>3319914324; 9783319914329; 9783319914336; 3319914332</Column2>
+					<Column3>9949151673202959</Column3>
+					<Column4>9915510271602931</Column4>
+					<Column5>[2018]</Column5>
+					<Column6>Palgrave Macmillan</Column6>
+					<Column7>Science fiction, Arabic--History and criticism.</Column7>
+					<Column8>No</Column8>
+					<Column9>Arabic science fiction /</Column9>
+					<Column10>0pn#3433.5 c36 2018</Column10>
+					<Column11>PN3433.5 .C36 2018</Column11>
+					<Column12>PN</Column12>
+					<Column13>On Order for Stacks</Column13>
+					<Column14>Main Library</Column14>
+					<Column15>1On Order for Stacks</Column15>
+					<Column16>Book</Column16>
+					<Column17>2019-02-25</Column17>
+				</Row>
+			</rowset>
+		</ResultXml>
+	</QueryResult>
+</report>

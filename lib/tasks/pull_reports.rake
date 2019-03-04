@@ -13,7 +13,10 @@ task :get_new_titles, %i[institution type report_override] => :environment do |_
   # slack.ping "Getting new `#{args[:type]}` titles for `#{institution.name}`" if Rails.env.production?
 
   # initiate and pull report
-  report = TitlesReport.new institution, args[:type], args[:report_override]
+  report = TitlesReport.new(institution,
+                            type: args[:type],
+                            report_override: [:report_override]
+                           ).create
 
   # get titles from report
   titles = report.titles
