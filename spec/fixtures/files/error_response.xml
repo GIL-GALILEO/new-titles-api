@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<web_service_result xmlns="http://com/exlibris/urm/general/xmlbeans">
+  <errorsExist>true</errorsExist>
+  <errorList>
+    <error>
+      <errorCode>INTERNAL_SERVER_ERROR</errorCode>
+      <errorMessage>Authentication error. An error occurred during authentication. Try again later or contact your system administrator.</errorMessage>
+      <trackingId>E01-0503153925-PR6QP-AWAE1141459569</trackingId>
+    </error>
+    <error>
+      <errorCode>401664</errorCode>
+      <errorMessage>Mandatory field is missing: path</errorMessage>
+      <trackingId>E01-0503182052-BO13X-AWAE1353729600</trackingId>
+    </error>
+  </errorList>
+</web_service_result>

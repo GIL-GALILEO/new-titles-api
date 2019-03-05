@@ -24,20 +24,67 @@ describe 'AlmaReportsApi' do
       end
     end
     describe 'fail' do
+      let(:institution){ double('An Institution', shortcode: 'test') }
+      let(:reporter) { double('A Reporter') }
+      before do
+        allow(reporter). to receive(:error)
+      end
+      describe 'timeout' do
+        before do
+          stub_request(:get, uri)
+            .with(headers: {'Authorization'=>'apikey'})
+            .to_timeout
+        end
+        it "sends a message to reporting when all of it's retries are used" do
+          AlmaReportsApi.call(query, institution, reporting: reporter)
+          expect(reporter).to have_received(:error).with(/MAX_RETRIES exhausted/)
+        end
+      end
+      describe 'unauthorized'
+      let(:body){ file_fixture('error_wrong_key.xml').read }
+      let(:xml_error_message) do
+        Nokogiri::XML(body).css('errorList error errorMessage').text
+      end
+
       before do
         stub_request(:get, uri)
           .with(headers: {'Authorization'=>'apikey'})
-          .to_timeout
+          .to_return(status: 400, body: body)
+      end
+      it "sends a message to reporting when wrong api key is used" do
+        AlmaReportsApi.call(query, institution, reporting: reporter)
+        expect(reporter).to have_received(:error).with(/#{xml_error_message}/)
       end
 
-      let(:institution){ double('An Institution', shortcode: 'test') }
-      it "it raises an error when it's used up all of it's retries" do
-        expect { AlmaReportsApi.call(query, institution) }
-          .to raise_error(StandardError, /MAX_RETRIES exhausted/)
-      end
     end
 
   end
+  describe('::parse_error')do
+    let(:body) { file_fixture('error_response.xml').read }
+    let(:xml_errors) { Nokogiri::XML(body).remove_namespaces!.css('errorList error') }
 
+    subject(:parsed_errors) { AlmaReportsApi.parse_error body }
+    it 'has the correct number of errors' do
+      expect(parsed_errors.size).to eql xml_errors.size
+    end
+  end
+  describe('::error_message')do
+    let(:body) { file_fixture('error_response.xml').read }
+    let(:response){ double('A response', code: '500', body: body) }
+    let(:institution){ 'uga' }
+    let(:query){ {path: 'Test/path'}}
+    subject(:message) {
+      AlmaReportsApi.error_message(response, institution, query)
+    }
+    it 'returns an error message with the correct http code' do
+      expect(message).to include("status: 500")
+    end
+    it 'returns an error message with the correct institution' do
+        expect(message).to include(institution)
+    end
+    it 'returns an error message with the correct query' do
+      expect(message).to include(query.to_s)
+    end
+  end
 
 end
