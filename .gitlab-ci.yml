@@ -21,7 +21,7 @@ restart_passenger:
   only:
   - master
   script:
-  - cd /deploy/new-titles-api
+  - cd /apps/new-titles-api
   - passenger-config restart-app $(pwd)
   when: manual
   environment: prod
