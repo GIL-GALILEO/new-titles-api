@@ -2,35 +2,25 @@
 
 # generate titles, when applicable, from alma report xml
 class ReportParser
-  def self.title_from(institution, row, medium)
+  SUPPORTED_MEDIUMS = ['electronic', 'physical']
+
+  # Creates a new Title instance from an xml row from alma report api response
+  # @param [Institution] institution
+  # @param [Nokogiri::XML] xml_row
+  # @param [String] medium
+  # @return [Title]
+  def self.title_from(institution, xml_row, medium)
     title_data = case medium
                  when 'electronic'
-                   xml_hash_electronic row.element_children
+                   xml_hash_electronic xml_row.element_children
                  when 'physical'
-                   xml_hash_physical row.element_children
+                   xml_hash_physical xml_row.element_children
                  else
-                   raise StandardError, 'Report medium error'
+                   raise ArgumentError, "medium not supported: #{medium}. Supported Reports: #{SUPPORTED_MEDIUMS}"
                  end
     title_data[:institution] = institution
-    title_data = finalize_location_for(title_data) if title_data.key?(:temporary_location)
-    Title.new title_data.except(:institution_name, :institution_code, :temporary_location)
-  end
-
-  def self.institution(title_data)
-    inst = institution_by_code title_data
-    inst = institution_by_name(title_data) unless inst
-    raise(StandardError, 'Institution could not be set') unless inst
-    inst
-  end
-
-  def self.institution_by_name(data)
-    return nil unless data[:institution_name]
-    Institution.find_by_name data[:institution_name]
-  end
-
-  def self.institution_by_code(data)
-    return nil unless data[:institution_code]
-    Institution.find_by_institution_code data[:institution_code]
+    finalize_location(title_data)
+    Title.new title_data
   end
 
   def self.xml_hash_physical(nodes)
@@ -107,7 +97,7 @@ class ReportParser
       when 'Column11'
         hash[:portfolio_name] = node.text
       when 'Column12'
-        date = node.text == '' ? '' : date_from(node.text)
+        date = node.text&.blank? ? '' : date_from(node.text)
         hash[:portfolio_activation_date] = date
         hash[:receiving_date] = date
       when 'Column13'
@@ -120,15 +110,23 @@ class ReportParser
   end
 
   def self.date_from(val)
-    str = val.gsub(/[^0-9]/, '')
-    return Date.strptime(val, '%Y') if str.length == 4
-    Date.parse str
-  rescue StandardError
+    return if val.blank?
+
+    str = val&.gsub(/[^0-9]/, '')
+    if str&.length == 4
+      Date.strptime(str, '%Y')
+    else
+      Date.parse str
+    end
+  rescue ArgumentError
     nil
   end
 
-  def self.finalize_location_for(hash)
-    hash[:location] = hash[:temporary_location] if hash[:temporary_location] && hash[:temporary_location] != 'None'
-    hash
+  def self.finalize_location(title_data)
+    unless title_data[:temporary_location].blank? ||
+           title_data[:temporary_location].casecmp('None').zero?
+      title_data[:location] = title_data[:temporary_location]
+    end
+    title_data.delete(:temporary_location)
   end
 end

@@ -6,8 +6,6 @@ class TitlesReport
   attr_accessor :institution, :titles, :failed_rows, :medium, :calls,
                 :report_type
 
-  SUPPORTED_REPORTS = ['New Titles Electronic', 'New Titles Physical']
-
   # @param [Institution] institution
   # @param [String] type
   # @param [String] report_override
@@ -20,9 +18,6 @@ class TitlesReport
     @api = api
     @report_type = report_override ? report_override : "New Titles #{type.capitalize}"
     @type = type.downcase
-    unless SUPPORTED_REPORTS.include? @report_type
-      raise ArgumentError, "report_type not supported: #{@report_type}"
-    end
   end
 
   def create
@@ -32,7 +27,9 @@ class TitlesReport
                            report_type: report_type,
                            token: token_from(xml_doc))
       response = @api.call query, @institution
-      raise(StandardError, "Response not successful [call ##{calls}]: #{response&.message}") unless response&.success?
+      unless response&.success?
+        raise(StandardError, "Response not successful [call ##{calls}]: #{response&.message}")
+      end
       @calls += 1
       xml_doc = parse_xml response
       extract_titles_from xml_doc, @type
