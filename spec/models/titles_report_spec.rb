@@ -15,7 +15,7 @@ describe 'TitlesReport' do
       end
     end
     context 'when report_override is provided' do
-      let(:override) { 'New Titles Electronic' }
+      let(:override) { 'New Titles Physical - Temp Location' }
       subject(:titles_report) do
         TitlesReport.new(institution, report_override: override)
       end

@@ -25,9 +25,9 @@ describe 'AlmaReportsApi' do
     end
     describe 'fail' do
       let(:institution) { double('An Institution', shortcode: 'test') }
-      let(:reporter) { double('A Reporter') }
+      let(:notifier) { double('A Notifier') }
       before do
-        allow(reporter). to receive(:error)
+        allow(notifier). to receive(:ping)
       end
       describe 'timeout' do
         before do
@@ -36,8 +36,8 @@ describe 'AlmaReportsApi' do
             .to_timeout
         end
         it "sends a message to reporting when all of it's retries are used" do
-          AlmaReportsApi.call(query, institution, reporting: reporter)
-          expect(reporter).to have_received(:error).with(/MAX_RETRIES exhausted/)
+          AlmaReportsApi.call(query, institution, notifier: notifier)
+          expect(notifier).to have_received(:ping).with(/MAX_RETRIES exhausted/)
         end
       end
       describe 'unauthorized' do
@@ -51,8 +51,8 @@ describe 'AlmaReportsApi' do
             .to_return(status: 400, body: body)
         end
         it 'sends a message to reporting when wrong api key is used' do
-          AlmaReportsApi.call(query, institution, reporting: reporter)
-          expect(reporter).to have_received(:error).with(/#{xml_error_message}/)
+          AlmaReportsApi.call(query, institution, notifier: notifier)
+          expect(notifier).to have_received(:ping).with(/#{xml_error_message}/)
         end
       end
     end

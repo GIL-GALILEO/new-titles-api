@@ -23,8 +23,8 @@ class TitlesReport
   def create
     xml_doc = nil
     until finished_from xml_doc
-      query = Query.create(institution_name: institution.name,
-                           report_type: report_type,
+      query = Query.create(institution_name: @institution.name,
+                           report_type: @report_type,
                            token: token_from(xml_doc))
       response = @api.call query, @institution
       unless response&.success?

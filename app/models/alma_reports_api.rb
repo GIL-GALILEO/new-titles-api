@@ -12,9 +12,9 @@ class AlmaReportsApi
   # Makes a call to the Alma Reports API and returns a response for the given query
   # @param [Query] query
   # @param [Institution] institution
-  # @param [Slack] reporting
+  # @param [Slack::Notifier] notifier
   # @return [HTTParty::Response]
-  def self.call(query, institution, reporting: Slack)
+  def self.call(query, institution, notifier: Slack::Notifier.new(Rails.application.secrets.slack_worker_webhook))
     tries ||= MAX_RETRIES
     api_key = Rails.application.secrets.send("#{institution.shortcode}_api_key")
     response = get(
@@ -24,7 +24,7 @@ class AlmaReportsApi
     )
 
     if response&.success? == false
-      reporting.error(error_message(response, institution.shortcode, query))
+      notifier.ping(error_message(response, institution.shortcode, query))
     end
 
     response
@@ -34,7 +34,7 @@ class AlmaReportsApi
       tries -= 1
       retry
     else
-      reporting.error "MAX_RETRIES exhausted: #{MAX_RETRIES}"
+      notifier.ping "MAX_RETRIES exhausted: #{MAX_RETRIES}"
     end
   end
 
