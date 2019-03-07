@@ -1,5 +1,6 @@
 stages:
   - deploy_production
+  - manual_actions
 
 deploy_to_prod:
   stage: deploy_production
@@ -14,3 +15,15 @@ deploy_to_prod:
   environment: prod
   tags:
     - ai-runner-shell
+
+restart_passenger:
+  stage: manual_actions
+  only:
+  - master
+  script:
+  - cd /deploy/new-titles-api
+  - passenger-config restart-app $(pwd)
+  when: manual
+  environment: prod
+  tags:
+   - ai-runner-shell
