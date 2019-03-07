@@ -1,0 +1,16 @@
+stages:
+  - deploy_production
+
+deploy_to_prod:
+  stage: deploy_production
+  only:
+  - master
+  script:
+  - rsync -rv --exclude=.git* . /deploy/new-titles-api/
+  - cp /deploy/.conf/.newtitles/*.yml /deploy/new-titles-api/config/
+  - cd /deploy/new-titles-api
+  - bundle install --path vendor/bundle
+  - RAILS_ENV=production bundle exec rake db:migrate --trace
+  environment: prod
+  tags:
+    - ai-runner-shell
