@@ -28,7 +28,13 @@ class TitlesReport
                            token: token_from(xml_doc))
       response = @api.call query, @institution
       unless response&.success?
-        raise(StandardError, "Response not successful [call ##{calls}]: #{response&.message}")
+        message = <<~HEREDOC
+          Response not successful [call ##{calls}]: #{response&.message}
+          status: #{response.code}.
+          Institution: #{@institution.name}.
+          Report Type: #{@report_type}.
+        HEREDOC
+        raise(StandardError, message)
       end
       @calls += 1
       xml_doc = parse_xml response
