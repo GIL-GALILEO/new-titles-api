@@ -23,20 +23,13 @@ class TitlesReport
   def create
     xml_doc = nil
     until finished_from xml_doc
+      @calls += 1
       query = Query.create(institution_name: @institution.name,
                            report_type: @report_type,
                            token: token_from(xml_doc))
       response = @api.call query, @institution
-      unless response&.success?
-        message = <<~HEREDOC
-          Response not successful [call ##{calls}]: #{response&.message}
-          status: #{response.code}.
-          Institution: #{@institution.name}.
-          Report Type: #{@report_type}.
-        HEREDOC
-        raise(StandardError, message)
-      end
-      @calls += 1
+      raise(StandardError, error_message(response)) unless response&.success?
+
       xml_doc = parse_xml response
       extract_titles_from xml_doc, @type
     end
@@ -46,7 +39,8 @@ class TitlesReport
   private
 
   def token_from(xml_doc)
-    xml_doc&.xpath('//ResumptionToken')&.text.to_s
+    token = xml_doc&.xpath('//ResumptionToken')&.text.to_s
+    token.blank? ? nil : token
   end
 
   def finished_from(xml_doc)
@@ -68,5 +62,14 @@ class TitlesReport
         next
       end
     end
+  end
+
+  def error_message(response)
+    message = <<~HEREDOC
+      Response not successful [call ##{@calls}]: #{response&.message}
+      Institution: #{@institution.name}.
+      Report Type: #{@report_type}.
+    HEREDOC
+    message
   end
 end
