@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+  <QueryResult>
+    <IsFinished>true</IsFinished>
+    <ResultXml>
+      <rowset xmlns="urn:schemas-microsoft-com:xml-analysis:rowset">
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:saw-sql="urn:saw-sql" targetNamespace="urn:schemas-microsoft-com:xml-analysis:rowset">
+          <xsd:complexType name="Row">
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column0" saw-sql:columnHeading="0" saw-sql:displayFormula="saw_0" saw-sql:tableHeading="" saw-sql:type="integer" type="xsd:int"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column1" saw-sql:columnHeading="Author" saw-sql:displayFormula="saw_1" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column2" saw-sql:columnHeading="ISBN" saw-sql:displayFormula="saw_2" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column3" saw-sql:columnHeading="LC Classification Top Line" saw-sql:displayFormula="saw_3" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column4" saw-sql:columnHeading="MMS Id" saw-sql:displayFormula="saw_4" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column5" saw-sql:columnHeading="Network Id" saw-sql:displayFormula="saw_5" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column6" saw-sql:columnHeading="Publication Date" saw-sql:displayFormula="saw_6" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column7" saw-sql:columnHeading="Publisher" saw-sql:displayFormula="saw_7" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column8" saw-sql:columnHeading="Subjects" saw-sql:displayFormula="saw_8" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column9" saw-sql:columnHeading="Suppressed From Discovery" saw-sql:displayFormula="saw_9" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column10" saw-sql:columnHeading="Title" saw-sql:displayFormula="saw_10" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column11" saw-sql:columnHeading="Electronic Collection Public Name" saw-sql:displayFormula="saw_11" saw-sql:tableHeading="Electronic Collection" saw-sql:type="varchar" type="xsd:string"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column12" saw-sql:columnHeading="Portfolio Activation Date" saw-sql:displayFormula="saw_12" saw-sql:tableHeading="Portfolio Activation Date" saw-sql:type="date" type="xsd:date"/>
+              <xsd:element maxOccurs="1" minOccurs="0" name="Column13" saw-sql:columnHeading="Material Type" saw-sql:displayFormula="saw_13" saw-sql:tableHeading="Portfolio" saw-sql:type="varchar" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:schema>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169672302959</Column4>
+          <Column7>Alhayat Isitiqomah Foundation</Column7>
+          <Column9>No</Column9>
+          <Column10>Al-Hayat: Journal of Islamic Education</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>HQ1104</Column3>
+          <Column4>9949169674002959</Column4>
+          <Column6>1992-</Column6>
+          <Column7>Publicacions de la Universitat Jaume I</Column7>
+          <Column8>Feminism--Periodicals.; Women--Periodicals.; Feminism.; Women.; Periodicals.</Column8>
+          <Column9>No</Column9>
+          <Column10>Asparkía : investigació feminista.</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>TJ1075</Column3>
+          <Column4>9949056614902959</Column4>
+          <Column6>[2015]-</Column6>
+          <Column7>Southwest Jiaotong University</Column7>
+          <Column8>Tribology--Periodicals.; Biomedical materials--Periodicals.; Biological interfaces--Periodicals.; Tribology--Congresses--Periodicals.; Biomedical materials--Congresses--Periodicals.; Biological interfaces--Congresses--Periodicals.; Biological interfaces.; Biomedical materials.; Tribology.; Biocompatible Materials.; Surface Properties.; Materials Testing.; Periodicals.; Electronic journals.; Periodical.</Column8>
+          <Column9>No</Column9>
+          <Column10>Biosurface and biotribology.</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169672802959</Column4>
+          <Column7>CERN</Column7>
+          <Column9>No</Column9>
+          <Column10>CERN IdeaSquare Journal of Experimental Innovation</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169673002959</Column4>
+          <Column7>Sociedad Paraguaya de Cirugía</Column7>
+          <Column9>No</Column9>
+          <Column10>Cirugía Paraguaya</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169673802959</Column4>
+          <Column7>Departamento de Didáctica de las Ciencias Experimentales Escuela Universitaria del Profesorado de EGB</Column7>
+          <Column9>No</Column9>
+          <Column10>Didáctica de las ciencias experimentales y sociales</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169672102959</Column4>
+          <Column7>Universitat Autònoma de Barcelona</Column7>
+          <Column9>No</Column9>
+          <Column10>Doblele</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>QA1</Column3>
+          <Column4>9949138057102959</Column4>
+          <Column6>1996-</Column6>
+          <Column7>Deutsche Mathematiker-Vereinigung</Column7>
+          <Column8>Mathematics--Periodicals.; Mathematics.; Electronic journals.; Periodicals.</Column8>
+          <Column9>No</Column9>
+          <Column10>Documenta mathematica : Journal der Deutschen Mathematiker-Vereinigung.</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169672002959</Column4>
+          <Column7>EAI</Column7>
+          <Column9>No</Column9>
+          <Column10>EAI endorsed transactions on internet of things</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169672502959</Column4>
+          <Column7>European Publishing</Column7>
+          <Column9>No</Column9>
+          <Column10>European Journal of Midwifery</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169673502959</Column4>
+          <Column9>No</Column9>
+          <Column10>Forecasting</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>AS89</Column3>
+          <Column4>9949052707902959</Column4>
+          <Column6>2001-</Column6>
+          <Column7>Facultad de Humanidades</Column7>
+          <Column8>Humanities--Uruguay--Periodicals.; Humanities--Periodicals.; Uruguay--Civilization--Periodicals.; Civilization.; Humanities.; Uruguay.; Periodicals.</Column8>
+          <Column9>No</Column9>
+          <Column10>Humanidades : revista de la Universidad de Montevideo.</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>QC584</Column3>
+          <Column4>9949169673302959</Column4>
+          <Column6>[2018]-</Column6>
+          <Column7>Institution of Engineering and Technology</Column7>
+          <Column8>Engineered materials Periodicals.; Dielectrics--Periodicals.; Nanoelectronics--Periodicals.; Dielectrics.; Nanoelectronics.; Periodicals.</Column8>
+          <Column9>No</Column9>
+          <Column10>IET Nanodielectrics.</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169673402959</Column4>
+          <Column7>Institution of Engineering and Technology</Column7>
+          <Column9>No</Column9>
+          <Column10>IET Smart Grid</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169673702959</Column4>
+          <Column7>Mainz Germany Johannes Gutenberg-UniversitÃ¤t</Column7>
+          <Column9>No</Column9>
+          <Column10>International Journal of Literary Linguistics</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169672902959</Column4>
+          <Column7>Faculty of Medicine</Column7>
+          <Column9>No</Column9>
+          <Column10>JKKI (Jurnal Kedokteran dan Kesehatan Indonesia)</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>BL1802</Column3>
+          <Column4>9949043758702959</Column4>
+          <Column6>©1982-</Column6>
+          <Column7>Maney Publishing on behalf of the Society for the Study of Chinese Religions; East Asian Studies Center of Indiana University; Society for the Study of Chinese Religions</Column7>
+          <Column8>China--Religion--Periodicals.; Religion.; China.; Periodicals.</Column8>
+          <Column9>No</Column9>
+          <Column10>Journal of Chinese religions.</Column10>
+          <Column11>Project Muse Premium Collection</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169671902959</Column4>
+          <Column9>No</Column9>
+          <Column10>Jurnal Kardiologi Indonesia</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>HD5764</Column3>
+          <Column4>9949169671802959</Column4>
+          <Column6>©2013-</Column6>
+          <Column7>OECD</Column7>
+          <Column8>Labor supply--OECD countries--Statistics--Periodicals.; Labor supply.; OECD countries.; Labour statistics ----OECD countries; Manpower statistics ----OECD countries; Periodicals.; Statistics.</Column8>
+          <Column9>No</Column9>
+          <Column10>OECD labour force statistics.</Column10>
+          <Column11>OECD Periodicals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169672202959</Column4>
+          <Column7>Center for Open Access in Science Belgrade Serbia</Column7>
+          <Column9>No</Column9>
+          <Column10>Open Journal for Studies in Arts</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>H8</Column3>
+          <Column4>9949052702102959</Column4>
+          <Column6>©1992-</Column6>
+          <Column7>Facultad de Ciencias Sociales Universidad de Costa Rica</Column7>
+          <Column8>Social sciences--Periodicals.; Social sciences.; Periodicals.</Column8>
+          <Column9>No</Column9>
+          <Column10>Reflexiones /</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>QH540</Column3>
+          <Column4>9949169673202959</Column4>
+          <Column6>2016-</Column6>
+          <Column7>Pensoft Publishers</Column7>
+          <Column8>Ecology--Periodicals.; Environmental sciences--Periodicals.; Ecology.; Environmental sciences.; Periodicals.</Column8>
+          <Column9>No</Column9>
+          <Column10>Rethinking ecology.</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>SF645</Column3>
+          <Column4>9949051884802959</Column4>
+          <Column6>1978-</Column6>
+          <Column7>Facultad de Ciencias Agrarias Universidad de Antiquia; Colvesa</Column7>
+          <Column8>Veterinary medicine--Colombia--Periodicals.; Zoology, Medical--Colombia--Periodicals.; Animal Diseases.; Médecine vétérinaire--Colombie--Périodiques.; Zoologie médicale--Colombie--Périodiques.; Veterinary medicine.; Zoology, Medical.; Colombia.; Periodicals.</Column8>
+          <Column9>No</Column9>
+          <Column10>Revista colombiana de ciencias pecuarias /</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169673102959</Column4>
+          <Column7>Instituto de Medicina Tropical</Column7>
+          <Column9>No</Column9>
+          <Column10>Revista del Instituto de Medicina Tropical</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+        <Row>
+          <Column0>0</Column0>
+          <Column3>Unknown</Column3>
+          <Column4>9949169673602959</Column4>
+          <Column9>No</Column9>
+          <Column10>Soil Systems</Column10>
+          <Column11>DOAJ Directory of Open Access Journals</Column11>
+          <Column12>2019-02-25</Column12>
+          <Column13>Journal</Column13>
+        </Row>
+      </rowset>
+    </ResultXml>
+  </QueryResult>
+</report>

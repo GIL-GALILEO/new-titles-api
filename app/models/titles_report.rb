@@ -3,45 +3,48 @@
 # represent alma analytics report
 # collates responses across calls and builds titles
 class TitlesReport
-  attr_accessor :institution, :titles, :failed_rows, :medium, :calls
+  attr_accessor :institution, :titles, :failed_rows, :medium, :calls,
+                :report_type
 
-  def initialize(institution, type, report_override = nil)
+  # @param [Institution] institution
+  # @param [String] type
+  # @param [String] report_override
+  # @param [AlmaReportsApi] api
+  def initialize(institution, type: 'Physical', report_override: nil, api: AlmaReportsApi)
     @titles = []
     @failed_rows = []
     @calls = 0
     @institution = institution
-    unfinished = true
-    token = nil
-    while unfinished
-      query = { limit: 500, col_names: false }
-      query[:path] = compose_query(institution, type, report_override) unless token
-      query[:token] = token if token
-      response = AlmaReportsApi.call query, institution
-      raise(StandardError, "Response not successful [call ##{calls}]: #{response&.message}") unless response&.success?
+    @api = api
+    @report_type = report_override ? report_override : "New Titles #{type.capitalize}"
+    @type = type.downcase
+  end
+
+  def create
+    xml_doc = nil
+    until finished_from xml_doc
       @calls += 1
+      query = Query.create(institution_name: @institution.name,
+                           report_type: @report_type,
+                           token: token_from(xml_doc))
+      response = @api.call query, @institution
+      raise(StandardError, error_message(response)) unless response&.success?
+
       xml_doc = parse_xml response
-      extract_titles_from xml_doc, type
-      token ||= token_from xml_doc
-      unfinished = !finished_from(xml_doc)
+      extract_titles_from xml_doc, @type
     end
+    self
   end
 
   private
 
-  def compose_query(institution, type, report_override)
-    if report_override
-      "/shared/#{institution.name}/Reports/#{report_override}"
-    else
-      "/shared/#{institution.name}/Reports/New Titles #{type.capitalize}"
-    end
-  end
-
   def token_from(xml_doc)
-    xml_doc.xpath('//ResumptionToken').text.to_s
+    token = xml_doc&.xpath('//ResumptionToken')&.text.to_s
+    token.blank? ? nil : token
   end
 
   def finished_from(xml_doc)
-    xml_doc.xpath('//IsFinished').text.to_s == 'true'
+    xml_doc&.xpath('//IsFinished')&.text.to_s == 'true'
   end
 
   def parse_xml(response)
@@ -59,5 +62,14 @@ class TitlesReport
         next
       end
     end
+  end
+
+  def error_message(response)
+    message = <<~HEREDOC
+      Response not successful [call ##{@calls}]: #{response&.message}
+      Institution: #{@institution.name}.
+      Report Type: #{@report_type}.
+    HEREDOC
+    message
   end
 end

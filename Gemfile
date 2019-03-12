@@ -33,4 +33,6 @@ group :test do
   gem 'fabrication'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'simplecov'
+  gem 'webmock', '~> 2.1'
 end
