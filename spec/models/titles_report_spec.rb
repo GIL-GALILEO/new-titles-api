@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe 'TitlesReport' do
   describe '::initialize' do
-    let(:institution) { double('An Institution') }
+    let(:institution) { double('An Institution', name: 'Test') }
     context 'when report_override is nil' do
       let(:type) { 'Electronic' }
       subject(:titles_report) do
@@ -163,6 +163,23 @@ describe 'TitlesReport' do
         it 'has failed rows with a medium not supported message' do
           expect(titles.failed_rows.sample[:message])
             .to include('medium not supported')
+        end
+      end
+      context 'Resumption token not set' do
+        let(:xml_doc) { file_fixture('response_electronic_missing_token.xml').read }
+        let(:api) {
+          api = double('An API')
+          allow(api).to receive(:call)
+                          .and_return(double('A response from an API',
+                                             success?: true,
+                                             body: xml_doc))
+          api
+        }
+        it 'throws error when resumption token not set' do
+          expect do
+            TitlesReport.new(Institution.find_by_shortcode('uga'), api: api)
+              .create
+          end.to raise_error(/Resumption Token/)
         end
       end
     end
