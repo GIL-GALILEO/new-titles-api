@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><report><QueryResult>
+  <IsFinished>false</IsFinished>
+  <ResultXml>
+    <rowset xmlns="urn:schemas-microsoft-com:xml-analysis:rowset">
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:saw-sql="urn:saw-sql" targetNamespace="urn:schemas-microsoft-com:xml-analysis:rowset">
+        <xsd:complexType name="Row">
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column0" saw-sql:columnHeading="0" saw-sql:displayFormula="saw_0" saw-sql:tableHeading="" saw-sql:type="integer" type="xsd:int"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column1" saw-sql:columnHeading="Author" saw-sql:displayFormula="saw_1" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column2" saw-sql:columnHeading="ISBN" saw-sql:displayFormula="saw_2" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column3" saw-sql:columnHeading="LC Classification Top Line" saw-sql:displayFormula="saw_3" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column4" saw-sql:columnHeading="MMS Id" saw-sql:displayFormula="saw_4" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column5" saw-sql:columnHeading="Network Id" saw-sql:displayFormula="saw_5" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column6" saw-sql:columnHeading="Publication Date" saw-sql:displayFormula="saw_6" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column7" saw-sql:columnHeading="Publisher" saw-sql:displayFormula="saw_7" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column8" saw-sql:columnHeading="Subjects" saw-sql:displayFormula="saw_8" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column9" saw-sql:columnHeading="Suppressed From Discovery" saw-sql:displayFormula="saw_9" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column10" saw-sql:columnHeading="Title" saw-sql:displayFormula="saw_10" saw-sql:tableHeading="Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column11" saw-sql:columnHeading="Electronic Collection Public Name" saw-sql:displayFormula="saw_11" saw-sql:tableHeading="Electronic Collection" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column12" saw-sql:columnHeading="Portfolio Activation Date" saw-sql:displayFormula="saw_12" saw-sql:tableHeading="Portfolio Activation Date" saw-sql:type="date" type="xsd:date"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column13" saw-sql:columnHeading="Material Type" saw-sql:displayFormula="saw_13" saw-sql:tableHeading="Portfolio" saw-sql:type="varchar" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:schema>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997679801802954</Column4>
+        <Column6>1643.</Column6>
+        <Column7>Printed by Stephen Bvkley</Column7>
+        <Column9>No</Column9>
+        <Column10>'Tis a plaine case gentlemen:.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680825902954</Column4>
+        <Column6>Printed in the yeare, 1647.</Column6>
+        <Column7>sn</Column7>
+        <Column9>No</Column9>
+        <Column10>(Hey hoe, for a husband,) or, The parliament of maides: their desires, decrees, and determinations. The principall members, are [brace] Mrs Beatrice Blinks, Mrs Sarah Sale Woman, Mrs Margeret Maundring, Mrs Priscilla Prick-song, Mrs Dorothy Doe well, Mrs Tabitha Treptoe. Ordered, and it is hereby ordained by the maids assembled in Parliament, that their desires, determinations, and decrees, be forthwith printed and published. Joane Jumble, Cler. Parl.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997679987202954</Column4>
+        <Column6>1642.</Column6>
+        <Column7>Decemb 24 Printed for I H and William Sommerset</Column7>
+        <Column9>No</Column9>
+        <Column10>A Barbarous and inhumane speech spoken by the Lord Wentworth, sonne to the late Earle of Straford vvherein he incourageth his souldiers to plunder townes, and ravish virgins, with many more inhumane outrages. Also a protestation made by the said Lord Wentworth. Wherein he sollemnely protesteth to revenge his fathers death on all the Kingdome. Likewise a true relation of a cruell combate that happened betweene the said Lord Wentworths regiment, and the regiment under the command of Prince Robert. Where they slew above 800. of their owne men, in striving who should plunder the towne of Cieitur on thursday December 21.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680828102954</Column4>
+        <Column6>Printed in the yeer, 1649.</Column6>
+        <Column7>sn</Column7>
+        <Column9>No</Column9>
+        <Column10>A Bartholmevv Fairing, new, new, new: sent from the raised siege before Dublin, as a preparatory present to the great thanksgiving-day. To be communicated onely to Independents.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680973102954</Column4>
+        <Column6>1641.</Column6>
+        <Column7>Printed for John Greensmith</Column7>
+        <Column9>No</Column9>
+        <Column10>A Bloody battell or The rebels overthrow, and Protestants victorie. Being a true relation of a great skirmish fought betweene Sir Thomas Moore of the Protestant party, and Maqueres the generall of the rebels, on the 2. day of Decemb. 1641. Also, of a cruell and detestable murther committed by 7. soldiers on the body of Mr. Atkins, his wife, and young child. In what a horrid manner they ript up his wives wombe being great with child, and afterward burnt her and her child in most lamentable manner.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680692502954</Column4>
+        <Column6>1653.</Column6>
+        <Column7>Printed by MS for Tho Jenner at the south entrance of the Royall Exchange London</Column7>
+        <Column9>No</Column9>
+        <Column10>A Book of fruits &amp; flovvers. Shewing the nature and use of them, either for meat or medicine. As also: to preserve, conserve, candy, and in wedges, or dry them. To make powders, civet bagges, all sort of sugar-works, turn'd works in sugar, hollow or frutages; and to pickell them. And for meat. To make pyes, biscat, maid dishes, marchpanes, leeches, and snow, craknels, caudels, cakes, broths, fritter-stuffe, puddings, tarts, syrupes, and sallets. For medicines. To make all sorts of poultisses, and serecloaths for any member swell'd or inflamed, ointments, waters for all wounds, and cancers, salves for aches, to take the ague out of any place burning or scalding; for the stopping of suddain bleeding, curing the piles, ulcers, ruptures, coughs, consumptions, and killing of warts, to dissolve the stone, killing the ring-worme, emroids, and dropsie, paine in the ears and teeth, deafnesse.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680211202954</Column4>
+        <Column6>1660.</Column6>
+        <Column7>Printed and are to be sold by most stationers</Column7>
+        <Column9>No</Column9>
+        <Column10>A Breife description or character of the religion and manners of the phanatiques in generall. Scil. [brace] Anabaptists, Independents, Brovvnists, Enthusiasts, Levellers, Quakers, Seekers, Fift-Monarchy-Men, &amp; Dippers. Shewing and refuting theur absurdities by due application, reflecting much also on Sir Iohn Præcisian and other novelists. Non seria semper.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997679927602954</Column4>
+        <Column6>1653.</Column6>
+        <Column7>printed for E Alsop</Column7>
+        <Column9>No</Column9>
+        <Column10>A Brief anatomie of women: being an invective against, and apologie for the bad and good of that sexe.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680606202954</Column4>
+        <Column6>Anno Dom. 1653,.</Column6>
+        <Column7>Printed by Tho Newcomb dwelling in Thamestreet over-against Baynards-Castle</Column7>
+        <Column9>No</Column9>
+        <Column10>A Brief dialogue between creditor &amp; prisoner; clearly setting forth how both of them have been shamefully abused for many years: with a short and easie way to free all prisoners for debt, with a just care of all creditors; and fully satisfactory to all such who have any religion or morall honesty.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680825402954</Column4>
+        <Column6>1654]</Column6>
+        <Column7>sn</Column7>
+        <Column9>No</Column9>
+        <Column10>A Brief relation of the proceedings before his Highness Councel concerning the petitioners of the Isle of Ely, against George Glapthorne Esquire; to take away the false report that is made touching the same, and that the truth may plainly appear.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680918802954</Column4>
+        <Column6>1654]</Column6>
+        <Column7>sn</Column7>
+        <Column9>No</Column9>
+        <Column10>A Brief remonstrance touching the pre-emption of tyn, and the coynages thereof.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680903402954</Column4>
+        <Column6>1656.</Column6>
+        <Column7>Printed by Tho Newcomb dwelling in Thames Street over against Baynards Castle</Column7>
+        <Column9>No</Column9>
+        <Column10>A Catalogue of the names of the knights, citizens, and burgesses, that have served in the last four Parlaments; viz. [brace] I. The Parlament begun at Westminster, the third of November, 1640. II. The Parlament the fourth of July, 1653. III. The Parlament Sept. 3. 1654. IIII. The Parlament the 17. of September, 1656. With the names of such noblemen, knights, and gentlemen, as met in the Parlament at Oxford. The reader may take notice that in the first Parlament, such as are marked with this * went to Oxford, those that died with d, and such as were new chosen with a small character : In the little Parliament, all those that stood for a godly learned ministery, are also marked with a *.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997681086202954</Column4>
+        <Column6>1653]</Column6>
+        <Column7>sn</Column7>
+        <Column9>No</Column9>
+        <Column10>A Caveat to those that shall resolve, whether right or wrong, to destroy J.L.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680734202954</Column4>
+        <Column6>Printed in the year of our Lord, 1655.</Column6>
+        <Column7>sn</Column7>
+        <Column9>No</Column9>
+        <Column10>A Caveate for sherriffs: or, a whip for corrupt officers. Whether baliffs of franchises, or liberties, bumms, bumms fellows, bumm setters, setters mates, scumms and varlots. Discovering their unjust exactions, and cruell oppressions of the people; and the good provision made by the law (now in force) to curb their exorbitancy, and the forfeitures and dammages from them that do contrary. With proposalls to prevent this horrid charge and exaction for the time to come, which may be done with great safety and ease to the people.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997681075402954</Column4>
+        <Column6>Novemb. 2. 1642.</Column6>
+        <Column7>Printed for Francis Coles</Column7>
+        <Column9>No</Column9>
+        <Column10>A Collection of speciall passages and certaine informations of all the most memorable accidents, and remarkable truths, from London, Westminster, and divers other parts of this Kingdome, from Munday Octob. 17. till Tuesday Novemb. 1. 1642. With a summary collection of all the declarations, orders, messages, remonstrances, petitions, letters, and other passages that have been published by order of both Houses of Parliament. And what other relations of newes have been any other ways published within that time from all other parts. Collected for the satisfaciton of all those that desire to be truely informed.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680263602954</Column4>
+        <Column6>1653]</Column6>
+        <Column7>sn</Column7>
+        <Column9>No</Column9>
+        <Column10>A Conference with the souldiers. Or, a parley with the party of horse, which with drawn drawn [sic] sword, entered the sessions at Mr. John Lilburn's trial.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680762502954</Column4>
+        <Column6>1656.</Column6>
+        <Column7>Printed by Henry Hills and are to be sold by Thomas Brewster at the three Bibles at the west end of Pauls</Column7>
+        <Column9>No</Column9>
+        <Column10>A Confession of the faith of several churches of Christ, in the county of Somerset, and of some churches in the counties neer adjacent.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680217802954</Column4>
+        <Column6>1642. June 6.</Column6>
+        <Column7>Printed for J Horton</Column7>
+        <Column9>No</Column9>
+        <Column10>A Copie of a letter sent from the committee at Lincoln, to the House of Commons, directed to he speaker of the said House, and subscribed with the names of the said committee. Die Sabbati 4. Iunii, 1642. Likewise an order from both Houses of Parliament, concerning the ordering of the militia, directed to the deputy lievtenants of the repective counties throughout all England, and dominion of Wales. Ordered that this be printed and published. Hen. Elsinge, Cler Parl. D. Com. Also exceeding joyfull newes from Yorke. With the resolution of the Protestant gentry and commonalty of Cheshire, concerning their petition lately presented to the Kings Majesty at Yorke.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680144402954</Column4>
+        <Column6>1654.</Column6>
+        <Column7>Printed by Tho Newcomb neer Baynards-Castle in Thames-street</Column7>
+        <Column9>No</Column9>
+        <Column10>A Copy of a letter concerning the election of a Lord Protector. Written to a member of Parliament.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680735802954</Column4>
+        <Column6>1656]</Column6>
+        <Column7>sn</Column7>
+        <Column9>No</Column9>
+        <Column10>A Copy of a letter, with its answer, concerning a contest at VVorcester between a minister and a Quaker.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680931202954</Column4>
+        <Column6>January 16. 1643. [i.e. 1644]</Column6>
+        <Column7>Printed and are to be sold by Peter Cole at his shop in Corn-Hill right over against Popes-Head Ally neare the Royall Exchange</Column7>
+        <Column9>No</Column9>
+        <Column10>A Cunning plot to divide and destroy, the Parliament and the city of London. Made knowne (at a common hall) by the Earle of Northumberland, Master Solliciter, and Sir Henry Vane. The design is fully discovered in the severall examinations and confessions, of Master Riley. Several examinations and confessions, of Sir Basill Brook. Severall examinations and confessions, of Master Violet. Proclamations from his Majesty. Letters from his Majesty. Letters from the Lord Digby. Letters from Colonell Read.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997681026202954</Column4>
+        <Column6>1655.</Column6>
+        <Column7>Printed for Giles Calvert at the Black-Spread-Eagle at the west end of Pauls</Column7>
+        <Column9>No</Column9>
+        <Column10>A Declaration from the Children of Light (who are by the world scornfully called Quakers) against several false reports, scandals and lyes, in several news books and pamphlets, put forth by Hen. Walker, R. Wood, and George Horton, whose lyes, and slanders shall not pass for truth; but shall be judged, and cast out by Michael and his angels into the world, which is their habitation amongst the children of darkness. Also a warning from the Lord to all ballad-makers, and image-makers, with them that print and sell them, who are found without the fear of God, contrary to the command of God, who saith, you shall not make an image of male nor female: and to the doctrine of the Apostles, who were to avoid prophane and vain fables. With a lamentation over all them that live in pride and gluttony, swearing, and all manner of uncleanness; and profess God, and profess Christ, and themselves Christians; but are seen to be those, whose God is their belly, whose end will be destruction.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997679728602954</Column4>
+        <Column6>Decemb. 23. 1642.</Column6>
+        <Column7>Printed for Joseph Matthewes and John Nicolls and are to be sold in the Old-baily</Column7>
+        <Column9>No</Column9>
+        <Column10>A Declaration from the City of Bristoll: by the maior, aldermen, sheriffes, and others of the city: declaring their resolution and fidelity to the Parliament and their designes: also a petition from M. Maioresse, M. Holworth, and 200. of the best citizens wives in Bristoll, to the maior and common councell of the city, for admitting the Parliaments forces into their city, and many other things worthy of observation. Sent from M. John Ball in Bristoll, to M. James Nicolls, a merchant in Fanchurch-street London.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997679979702954</Column4>
+        <Column6>1648.</Column6>
+        <Column7>by Robert Ibbitson in Smithfield neere the Queens-head tavern</Column7>
+        <Column9>No</Column9>
+        <Column10>A Declaration of His Highnesse the Duke of Yorke his going away from St. Jamses. [sic] And concerning the Right Honourable the Earle of Northumberland, from whom he went. April 22. 1648. Imprimatur Gil. Mabbot.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>Unknown</Column3>
+        <Column4>997680238102954</Column4>
+        <Column6>1654.</Column6>
+        <Column7>Printed for Livewel Chapman at the Crown in Popes-head-Alley</Column7>
+        <Column9>No</Column9>
+        <Column10>A Declaration of several of the Churches of Christ, and godly people in and about the citie of London; concerning the kingly interest of Christ, and the present suffrings of his cause and saints in England.</Column10>
+        <Column11>Early English Books Online (EEBO)</Column11>
+        <Column12>2019-03-11</Column12>
+        <Column13>Book</Column13>
+      </Row>
+    </rowset>
+  </ResultXml>
+</QueryResult></report>
