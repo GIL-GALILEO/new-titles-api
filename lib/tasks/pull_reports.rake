@@ -22,7 +22,7 @@ task :get_new_titles, %i[institution type report_override] => :environment do |_
   titles = report.titles
   if titles.any?
     outcome = Title.sync titles
-    slack.ping "New #{args[:type]} titles for `#{institution.shortcode}` updated. `#{outcome[:new]}` titles added and `#{outcome[:expired]}` expired."
+    slack.ping "Pulled `#{titles.size}` new #{args[:type]} titles for `#{institution.shortcode}`: `#{outcome[:new]}` titles added and `#{outcome[:expired]}` expired."
   else
     slack.ping "No new #{args[:type]} titles received for `#{institution.shortcode}`"
   end

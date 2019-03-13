@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe 'TitlesReport' do
   describe '::initialize' do
-    let(:institution) { double('An Institution') }
+    let(:institution) { double('An Institution', name: 'Test') }
     context 'when report_override is nil' do
       let(:type) { 'Electronic' }
       subject(:titles_report) do

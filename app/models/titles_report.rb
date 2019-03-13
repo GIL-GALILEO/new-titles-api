@@ -18,29 +18,31 @@ class TitlesReport
     @api = api
     @report_type = report_override ? report_override : "New Titles #{type.capitalize}"
     @type = type.downcase
+    @query = Query.create(institution_name: institution.name,
+                          report_type: @report_type)
   end
 
   def create
     xml_doc = nil
     until finished_from xml_doc
       @calls += 1
-      query = Query.create(institution_name: @institution.name,
-                           report_type: @report_type,
-                           token: token_from(xml_doc))
-      response = @api.call query, @institution
+      if @calls > 1 && !@query.key?(:token)
+        raise StandardError, "Resumption Token not set for call ##{@calls} to API. Query: #{@query}"
+      end
+      response = @api.call @query, @institution
       raise(StandardError, error_message(response)) unless response&.success?
-
       xml_doc = parse_xml response
       extract_titles_from xml_doc, @type
+      set_query_token(xml_doc)
     end
     self
   end
 
   private
 
-  def token_from(xml_doc)
+  def set_query_token(xml_doc)
     token = xml_doc&.xpath('//ResumptionToken')&.text.to_s
-    token.blank? ? nil : token
+    @query[:token] = token unless token.blank?
   end
 
   def finished_from(xml_doc)
