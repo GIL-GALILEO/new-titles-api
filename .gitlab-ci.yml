@@ -10,7 +10,7 @@ deploy_to_prod:
   - rsync -rv --exclude=.git* . /deploy/new-titles-api/
   - cp /deploy/.conf/.newtitles/*.yml /deploy/new-titles-api/config/
   - cd /deploy/new-titles-api
-  - bundle install --path vendor/bundle
+  - bundle install --deployment --without development test --path vendor/bundle
   - RAILS_ENV=production bundle exec rake db:migrate --trace
   environment: prod
   tags:
