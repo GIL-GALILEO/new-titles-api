@@ -20,7 +20,7 @@ class TitlesReport
     @type = type.downcase
     @query = Query.create(institution_name: institution.name,
                           report_type: @report_type,
-                          path: report_path),
+                          path: report_path)
     @xml_doc = nil
   end
 
@@ -28,7 +28,7 @@ class TitlesReport
     until finished? @xml_doc
       @calls += 1
       check_for_token @xml_doc
-      response = @api.call @query, @institution
+      response = @api.call(@query, @institution)
       raise(StandardError, error_message(response)) unless response&.success?
 
       @xml_doc = parse_xml response
@@ -70,7 +70,7 @@ class TitlesReport
 
   def error_message(response)
     message = <<~HEREDOC
-      Response not successful [call ##{@calls}]: #{response&.message}
+      Response not successful [call ##{@calls}]: #{response&.body}
       Institution: #{@institution.name}.
       Report Type: #{@report_type}.
     HEREDOC

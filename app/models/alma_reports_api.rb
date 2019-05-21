@@ -29,7 +29,7 @@ class AlmaReportsApi
 
     response
 
-  rescue Net::OpenTimeout
+  rescue Net::ReadTimeout
     if (tries - 1).positive?
       tries -= 1
       retry
