@@ -1,6 +1,7 @@
 #!/bin/bash 
-INSTITUTIONS="abac atlm ccga dalton gcsu gordon sgsc ung uwg augusta clayton ftv ggc gsw mga asu csu ega gasou ghc ksu savst uga vsu"
-#INSTITUTIONS="uga augusta gsu"
+INSTITUTIONS="abac atlm ccga dalton gcsu gordon sgsc ung uwg augusta clayton ftv ggc gsw mga asu csu ega gasou ghc ksu savst tech uga vsu"
+
+#INSTITUTIONS="tech uga augusta gsu"
 
 for INST in $INSTITUTIONS;
 do 

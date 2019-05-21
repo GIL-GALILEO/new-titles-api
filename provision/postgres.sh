@@ -93,7 +93,7 @@ CREATE USER $APP_DB_USER WITH PASSWORD '$APP_DB_PASS' SUPERUSER CREATEDB;
 
 
 -- Create the database:
-CREATE DATABASE $APP_DB_NAME WITH OWNER=$APP_DB_USER
+CREATE DATABASE "$APP_DB_NAME" WITH OWNER=$APP_DB_USER
                                   LC_COLLATE='en_US.utf8'
                                   LC_CTYPE='en_US.utf8'
                                   ENCODING='UTF8'
