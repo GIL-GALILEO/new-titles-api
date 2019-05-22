@@ -4,7 +4,11 @@ require 'rails_helper'
 
 describe 'TitlesReport' do
   describe '::initialize' do
-    let(:institution) { double('An Institution', name: 'Test') }
+    let(:institution) do
+      double('An Institution',
+             name: 'Test',
+             electronic_path: nil)
+    end
     context 'when report_override is nil' do
       let(:type) { 'Electronic' }
       subject(:titles_report) do
@@ -37,9 +41,9 @@ describe 'TitlesReport' do
         let(:dbl_api) do
           api = double('An API')
           allow(api).to receive(:call)
-                          .and_return(double('A response from an API',
-                                             success?: true,
-                                             body: xml_doc))
+            .and_return(double('A response from an API',
+                               success?: true,
+                               body: xml_doc))
           api
         end
         subject(:report) do
@@ -65,9 +69,9 @@ describe 'TitlesReport' do
         let(:dbl_api) do
           api = double('An API')
           allow(api).to receive(:call)
-                          .and_return(double('A response from an API',
-                                             success?: true,
-                                             body: xml_doc))
+            .and_return(double('A response from an API',
+                               success?: true,
+                               body: xml_doc))
           api
         end
         subject(:report) do
@@ -128,14 +132,13 @@ describe 'TitlesReport' do
           expect(report.titles.last.title).to eql title
         end
       end
-
     end
 
     context 'unsuccessful' do
       it 'throws error when receives unsuccessful response from api' do
         dbl_response = double('A response from an API',
                               success?: false,
-                              message: 'dbl_response')
+                              body: 'dbl_response')
         dbl_api = double('An API')
         allow(dbl_api).to receive(:call).and_return(dbl_response)
 
@@ -146,17 +149,17 @@ describe 'TitlesReport' do
       end
       context 'failed rows' do
         let(:xml_doc) { file_fixture('response_physical_no_token.xml').read }
-        let(:api) {
+        let(:api) do
           api = double('An API')
           allow(api).to receive(:call)
             .and_return(double('A response from an API',
                                success?: true,
                                body: xml_doc))
           api
-        }
-        subject(:titles) {
+        end
+        subject(:titles) do
           TitlesReport.new(institution, type: '!Bad_Medium!', api: api).create
-        }
+        end
         it 'has failed rows when a bad medium is supplied' do
           expect(titles.failed_rows).not_to be_empty
         end
@@ -167,18 +170,18 @@ describe 'TitlesReport' do
       end
       context 'Resumption token not set' do
         let(:xml_doc) { file_fixture('response_electronic_missing_token.xml').read }
-        let(:api) {
+        let(:api) do
           api = double('An API')
           allow(api).to receive(:call)
-                          .and_return(double('A response from an API',
-                                             success?: true,
-                                             body: xml_doc))
+            .and_return(double('A response from an API',
+                               success?: true,
+                               body: xml_doc))
           api
-        }
+        end
         it 'throws error when resumption token not set' do
           expect do
             TitlesReport.new(Institution.find_by_shortcode('uga'), api: api)
-              .create
+                        .create
           end.to raise_error(/Resumption Token/)
         end
       end

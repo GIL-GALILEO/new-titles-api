@@ -34,5 +34,25 @@ describe 'Query' do
         expect(subject[:path]).to be_nil
       end
     end
+    context 'when path is supplied' do
+      it 'has the the correct path value' do
+      path = 'test/path'
+      query = Query.create(institution_name: 'UGA',
+                           report_type: 'New Titles',
+                           path: path)
+      expect(query[:path]).to match(path)
+      end
+    end
+    context 'when path is not supplied' do
+      it 'has the the correct path value' do
+        institution = 'test institution'
+        report = 'test report'
+        query = Query.create(institution_name: institution,
+                             report_type: report)
+        path = "/shared/#{institution}/Reports/#{report}"
+
+        expect(query[:path]).to match(path)
+      end
+    end
   end
 end

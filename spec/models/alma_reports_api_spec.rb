@@ -29,15 +29,26 @@ describe 'AlmaReportsApi' do
       before do
         allow(notifier). to receive(:ping)
       end
-      describe 'timeout' do
+      describe 'When a ReadTimeout is raised' do
         before do
           stub_request(:get, uri)
             .with(headers: { 'Authorization'=>'apikey' })
-            .to_timeout
+            .to_raise Net::ReadTimeout
         end
         it "sends a message to reporting when all of it's retries are used" do
           AlmaReportsApi.call(query, institution, notifier: notifier)
-          expect(notifier).to have_received(:ping).with(/MAX_RETRIES exhausted/)
+          expect(notifier).to have_received(:ping).with(/ReadTimeout/)
+        end
+      end
+      describe 'When an OpenTimeout is raised' do
+        before do
+          stub_request(:get, uri)
+              .with(headers: { 'Authorization'=>'apikey' })
+              .to_raise Net::OpenTimeout
+        end
+        it "sends a message to reporting when all of it's retries are used" do
+          AlmaReportsApi.call(query, institution, notifier: notifier)
+          expect(notifier).to have_received(:ping).with(/OpenTimeout/)
         end
       end
       describe 'unauthorized' do
