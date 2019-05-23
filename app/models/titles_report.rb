@@ -78,7 +78,7 @@ class TitlesReport
   end
 
   def report_path
-    path = if @report_type.downcase == 'physical'
+    path = if @type.downcase == 'physical'
              @institution.physical_path
            else
              @institution.electronic_path
