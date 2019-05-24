@@ -29,12 +29,13 @@ class AlmaReportsApi
 
     response
 
-  rescue Net::OpenTimeout
+  rescue Net::ReadTimeout, Net::OpenTimeout => e
     if (tries - 1).positive?
       tries -= 1
       retry
     else
-      notifier.ping "MAX_RETRIES exhausted: #{MAX_RETRIES}"
+      message = "MAX_RETRIES exhausted: #{MAX_RETRIES}. Error type: #{e.class}"
+      notifier.ping message
     end
   end
 
