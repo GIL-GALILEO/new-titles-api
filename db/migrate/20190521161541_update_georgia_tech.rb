@@ -3,6 +3,7 @@ class UpdateGeorgiaTech < ActiveRecord::Migration[5.2]
     gt = Institution.find_by_shortcode('tech')
     gt.shortcode= 'gatech'
     gt.institution_code = '01GALI_GIT'
+    gt.image = 'https://gatech-primo.hosted.exlibrisgroup.com/primo-explore/custom/01GALI_GIT/img/library-logo.png'
     gt.api_key = '01GALI_GIT_key'
     gt.url = 'https://gatech-primo.hosted.exlibrisgroup.com/primo-explore/search?vid=01GALI_GIT&search_scope=default_scope&query=addsrcrid,exact,'
     gt.electronic_path =
@@ -16,6 +17,7 @@ class UpdateGeorgiaTech < ActiveRecord::Migration[5.2]
     gt = Institution.find_by_shortcode('gatech')
     gt.shortcode = 'tech'
     gt.institution_code = ''
+    gt.image = 'http://www.library.gatech.edu/images/gt-logo-solid-blue.png'
     gt.api_key = '_key'
     gt.url = 'https://www.library.gatech.edu/'
     gt.electronic_path = nil
