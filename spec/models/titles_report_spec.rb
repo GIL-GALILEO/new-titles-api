@@ -7,7 +7,8 @@ describe 'TitlesReport' do
     let(:institution) do
       double('An Institution',
              name: 'Test',
-             electronic_path: nil)
+             electronic_path: nil,
+             physical_path: nil)
     end
     context 'when report_override is nil' do
       let(:type) { 'Electronic' }
